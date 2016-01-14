@@ -1,0 +1,114 @@
+body
+{
+	/*background: url("back2.jpg") fixed no-repeat top left;
+	background-size: cover;*/
+}
+
+/*dl
+{
+	color: white;
+}
+
+.premier
+{
+	color: white;
+}*/
+
+.btn
+{
+	position: relative;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	/*-ms-touch-action: manipulation;
+	touch-action: manipulation;*/
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid;
+	color: #333;
+	background-color: #fff;
+	border-color #ccc;
+	border-radius: 4px;
+	left: 100px;
+}
+
+.btn:hover
+{
+	background-color: #ddd;
+}
+
+a{
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.connexion
+{
+	border: solid;
+	margin-top: 50px;
+	width: 500px;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	margin: auto;
+	margin-top: 250px;
+	border-radius: 8px;
+}
+
+.btn-connect
+{
+	position: relative;
+	left: 100px;
+}
+
+.pseudo
+{
+	padding-left: 19px;
+	padding-right: 19px; 
+
+}
+
+.index
+{
+	text-align: center
+}
+
+header
+{
+	background-color: purple;
+	width: 100.92%;
+	height: 100px;
+	margin-right: 0px;
+	margin-top: -10px;
+	margin-left: -10px;
+	
+}
+
+.input-form
+{
+	position: relative;
+	width: 300px;
+	border-radius: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 4px;
+	margin-bottom: 10px;
+	left: 100px;
+
+}
+
+.reg
+{
+	position: relative;
+	left: 120px;
+}
