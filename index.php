@@ -1,23 +1,28 @@
-<!DCOTYPE html>
+<!DOCTYPE html>
+<?php
+if(!isset($_SESSION))
+{
+session_start();
+}
+?>
+
+<link rel="stylesheet" href="back.css">
+
 <html>
 	<head>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="back.css" >
+		<meta charset="utf_8"/>
 		<title>
-			Le site de Zeni
+			Connexion
 		</title>
-	</title>
-	<header>
-	</header>
+	
+	</head>
 	<body>
-		<div class = "index">
-			<h1><p><FONT color=#ff000> Index </FONT></p></h1>
-			<nav>
-				<dl>
-					<dt><h3><a href="connexion.php" title="projet de gestion de tâche.
-(Test de commande html, css, php et javascript pour le moment"> Projet web</a></h3></li>
-				</dl>
-			</nav>
+		<div class="connexion">
+		<form class="premier" name ="Connexion" method="post" action="verif_connexion.php">
+		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login" title="4 à 15 caractères"/><br/>
+		<input class="input-form" type="text" name="password" id="password" placeholder="Password" title="4 à 20 caractères"/> <br/><br/>
+		<button class="btn" type="submit">Connexion<br/></button> <span class="reg"><?php echo'<a href="registeration.php" > Pas encore inscrit ? </a>';  ?></span>
+		</form>
 		</div>
 	</body>
 </html>
