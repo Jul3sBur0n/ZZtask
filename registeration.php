@@ -17,7 +17,7 @@ session_start();
 		<input class="input-form" type="text" name="confmail" id="confmail" placeholder="Confirmation Email"/><br/>		
 		<input class="input-form" type="text" name="password" id="password" placeholder="Password" title="4 à 20 caractères, pas d'espace"/> <br/>
 		<input class="input-form" type="text" name="confpass" id="confpass" placeholder="Confirmation Password"/><br/><br/>
-		<button class="btn">Enregistrement<br/></button> <?php echo'<a class="reg" href="connexion.php" > Déjà inscrit ? </a>';  ?>
+		<button class="btn">Enregistrement<br/></button> <?php echo'<a class="reg" href="index.php" > Déjà inscrit ? </a>';  ?>
 		</form>
 		</div>
 	</body>
