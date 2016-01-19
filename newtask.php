@@ -3,7 +3,7 @@
 
 <html>
 	<header>
-		<meta charset="UTF-8">
+		
 		<title>Ajouter une tache</title>
 		<link rel="stylesheet" href="back.css">
 	</header>
