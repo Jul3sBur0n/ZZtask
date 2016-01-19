@@ -14,7 +14,7 @@
 		<input class="input-form" type="text" name="Creator" id="creator" placeholder="Creator"/><br/>
 		<input class="input-form" type="text" name="Deadline" id="deadline" placeholder="Deadline"/><br/>
 		<textarea name="Content" id="Content" placeholder="Descriptif/Message"/><br/>
-		<button class="btn">Enregistrement<br/></button> <?php echo'<a class="reg" href="index.php" > Déjà inscrit ? </a>';  ?>
+		<button class="btn">Enregistrement<br/></button> <?php echo'<a class="reg" href="index.php" > DÃ©jÃ  inscrit ? </a>';  ?>
 		</form>
 	
 	</body>
