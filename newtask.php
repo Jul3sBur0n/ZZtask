@@ -3,7 +3,7 @@
 
 <html>
 	<header>
-		<meta charset="UTF-8">
+		
 		<title>Ajouter une tache</title>
 		<link rel="stylesheet" href="back.css">
 	</header>
@@ -14,7 +14,7 @@
 		<input class="input-form" type="text" name="Creator" id="creator" placeholder="Creator"/><br/>
 		<input class="input-form" type="text" name="Deadline" id="deadline" placeholder="Deadline"/><br/>
 		<textarea name="Content" id="Content" placeholder="Descriptif/Message"/><br/>
-		<button class="btn">Enregistrement<br/></button> <?php echo'<a class="reg" href="index.php" > DÈj‡ inscrit ? </a>';  ?>
+		<button class="btn">Enregistrement<br/></button> <?php echo'<a class="reg" href="index.php" > D√©j√† inscrit ? </a>';  ?>
 		</form>
 	
 	</body>
