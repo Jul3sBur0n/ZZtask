@@ -47,12 +47,12 @@ else
 {
 	echo 'pas d\'erreur</p>';
 	$fichier = fopen('db_user.txt','a+');
-	fputs($fichier,"\n");
 	fputs($fichier,$_POST['pseudo']);
 	fputs($fichier,' ');
 	fputs($fichier,$_POST['password']);
 	fputs($fichier,' ');
 	fputs($fichier,$_POST['mail']);	
+	fputs($fichier,"\n");
 	fclose($fichier);
 }
 ?>
