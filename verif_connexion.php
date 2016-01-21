@@ -27,9 +27,7 @@ if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']))
 }
 else
 {
-	
-	$fichier = fopen('db_user.txt','r');
-	if($_SESSION['connexion'] == 1 || verificationConnexion($_POST['pseudo'],$_POST['password']) )
+	if(verificationConnexion($_POST['pseudo'],$_POST['password']) )
 	{
 		$_SESSION['connexion'] = 1;
 		echo "Tu as bien été identifié";
@@ -40,7 +38,7 @@ else
 		$_SESSION['error'] = 20;
 		$_SESSION['connexion'] = 0;
 		header('Location:index.php');
-	}	
+	}
 }
 ?>
 	</body>
