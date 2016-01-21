@@ -30,6 +30,7 @@ else
 	if(verificationConnexion($_POST['pseudo'],$_POST['password']) )
 	{
 		$_SESSION['connexion'] = 1;
+		header('Location:tasklist.php');
 		echo "Tu as bien été identifié";
 	}
 	else

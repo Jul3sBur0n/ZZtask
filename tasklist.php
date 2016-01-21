@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<?php if($_SESSION['connexion'] == 0) header('location:index.php'); ?>
 <html>
 	
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf_8">
 		<title> Liste des taches </title>
 		<link rel="stylesheet"  href="task.css">
 	
