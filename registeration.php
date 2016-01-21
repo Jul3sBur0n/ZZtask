@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <?php
-if(!isset($_SESSION))
-{
-session_start();
-}
+include 'sessionstarter.php';
 ?>
 
 <link rel="stylesheet" href="back.css">

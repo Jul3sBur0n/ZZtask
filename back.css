@@ -112,3 +112,10 @@ header
 	position: relative;
 	left: 120px;
 }
+
+.erreur
+{
+	color: red;
+	position: relative;
+	left: 100px;
+	top: 5px;

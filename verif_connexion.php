@@ -1,8 +1,5 @@
 <?php
-if(!isset($_SESSION))
-{
-session_start();
-}
+include 'sessionstarter.php';
 
 include 'function_connexion.php';
 
@@ -22,25 +19,28 @@ function checkParam($a)
 <?php
 if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']))
 {
+	$_SESSION['error'] = 10;
+	$_SESSION['connexion'] = 0;
+	if(checkParam($_POST['pseudo']))
+		$_SESSION['login'] = $_POST['pseudo'];
 	header('location:index.php');
 }
 else
 {
 	
 	$fichier = fopen('db_user.txt','r');
-	if( verificationConnexion($fichier,$_POST['pseudo'],$_POST['password']) )
+	if($_SESSION['connexion'] == 1 || verificationConnexion($_POST['pseudo'],$_POST['password']) )
 	{
+		$_SESSION['connexion'] = 1;
 		echo "Tu as bien été identifié";
 	}
 	else
 	{
+		$_SESSION['login'] = $_POST['pseudo'];
 		$_SESSION['error'] = 20;
+		$_SESSION['connexion'] = 0;
 		header('Location:index.php');
 	}	
-	
-	fclose($fichier);
-
-
 }
 ?>
 	</body>
