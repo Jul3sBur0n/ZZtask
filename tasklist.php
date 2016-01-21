@@ -4,9 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title> Liste des taches </title>
-		<link rel="stylesheet" type="text/css" href="default.css">
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet"  href="task.css">
 	
 	</head>
 	

@@ -6,44 +6,41 @@
 }
 
 .todo {
-	float:left;
-	width:33%;
+	width:30%;
 	border: solid;
 	margin-top: 50px;
 	padding-bottom: 50px;
 	padding-top: 50px;
-	margin: auto;
-	margin-top: 250px;
-	position:relative;
+	margin-left: 0%;
+	margin-top: 100px;
+	position: absolute;
 
 	border-radius: 8px;
 
 }
 
 .inprogress {
-	float:centerline;
-	width:33%;
+	width:30%;
 	border: solid;
 	margin-top: 50px;
 	padding-bottom: 50px;
 	padding-top: 50px;
-	margin: auto;
-	margin-top: 250px;
-	position:relative;
+	margin-left: 32.5%;
+	margin-top: 100px;
+	position: absolute;
 	border-radius: 8px;
 
 }
 
 .done {
-	float:left;
-	width:33%;
+	width:30%;
 	border: solid;
 	margin-top: 50px;
 	padding-bottom: 50px;
 	padding-top: 50px;
-	margin: auto;
-	margin-top: 250px;
-	position:relative;
+	margin-left: 65%;
+	margin-top: 100px;
+	position: absolute;
 	border-radius: 8px;
 
 }
