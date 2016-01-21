@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <?php
-if(!isset($_SESSION))
-{
-session_start();
-}
+include 'sessionstarter.php';
 ?>
 
 <link rel="stylesheet" href="back.css">
@@ -23,6 +20,13 @@ session_start();
 		<input class="input-form" type="password" name="password" id="password" placeholder="Password" title="4 à 20 caractères"/> <br/><br/>
 		<button class="btn" type="submit">Connexion<br/></button> <span class="reg"><?php echo'<a href="registeration.php" > Pas encore inscrit ? </a>';  ?></span>
 		</form>
+		<?php
+			if($_SESSION['error'] == 20)
+				{
+					echo "Erreur d'identification.";
+					$_SESSION['error'] = 0;
+				}
+		?>
 		</div>
 	</body>
 </html>

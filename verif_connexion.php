@@ -34,7 +34,8 @@ else
 	}
 	else
 	{
-		echo "Mauvaise connexion";
+		$_SESSION['error'] = 20;
+		header('Location:index.php');
 	}	
 	
 	fclose($fichier);
