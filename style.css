@@ -1,0 +1,19 @@
+div {
+  display:table
+}
+
+
+.colonne {
+  display:table-cell;
+  width:150px;
+  padding:25px;
+}
+
+.colonne:first-child {
+  background:#e6e2af;
+}
+
+.colonne + .colonne {
+  border-left:2px solid #fff;
+  background:#efecca;
+}
