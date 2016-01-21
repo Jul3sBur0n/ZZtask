@@ -18,7 +18,7 @@ function checkParam($a)
 }
 
 
-if (!checkParam($_POST['nom']) || !checkParam($_POST['creator']) || !checkParam($_POST['deadline']) || !checkParam($_POST['content'])) //Oublie d'un champ
+if (!checkParam($_POST['nom']) || !checkParam($_POST['deadline'])) //Oublie d'un champ
 
 {
 	header('location: newtask.php');
@@ -29,7 +29,7 @@ if (!checkParam($_POST['nom']) || !checkParam($_POST['creator']) || !checkParam(
     <p>Cliquez <a href="./tasklist.php">ici</a> pour annuler</p>';
 
 }
-elseif(strpbrk($_POST['nom']," ") || strpbrk($_POST['creator']," ") || strpbrk($_POST['deadline']," ") )
+elseif(strpbrk($_POST['nom']," ") || strpbrk($_POST['deadline']," ") )
 {
     header('location: newtask.php');
 	echo '<p>Un espace est présent dans votre nom ou createur ou deadline</p>
@@ -42,8 +42,6 @@ else
 	$fichier = fopen('db_task.txt','a+');
 	fputs($fichier,"\n");
 	fputs($fichier,$_POST['nom']);
-	fputs($fichier,' ');
-	fputs($fichier,$_POST['creator']);
 	fputs($fichier,' ');
 	fputs($fichier,$_POST['deadline']);
     fputs($fichier,' ');
