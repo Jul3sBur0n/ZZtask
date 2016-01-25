@@ -19,12 +19,15 @@ function checkParam($a)
 
 	
 	$fichier = fopen('db_task.txt','a+');
-	fputs($fichier,"\n");
 	fputs($fichier,$_POST['nom']);
 	fputs($fichier,' ');
 	fputs($fichier,$_POST['deadline']);
-    fputs($fichier,' ');
-	fputs($fichier,$_POST['content']);
+	if(checkParam($_POST['content']))
+	{
+		fputs($fichier,' ');
+		fputs($fichier,$_POST['content']);
+	}
+	fputs($fichier,"\n");
 	fclose($fichier);
 
 header('location:tasklist.php');
