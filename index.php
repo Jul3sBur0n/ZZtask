@@ -33,6 +33,9 @@ include 'sessionstarter.php';
 						echo '<span class = "erreur">Erreur d\'identification.</span>';
 						$_SESSION['error'] = 0;
 						break;
+						
+					default:
+						break;
 				}
 			}
 		?>
