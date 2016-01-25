@@ -17,8 +17,12 @@ function checkParam($a)
 	fputs($fichiertask,$_POST['nom']);
 	fputs($fichiertask,' ');
 	fputs($fichiertask,$_POST['deadline']);
-    fputs($fichiertask,' ');
-	fputs($fichiertask,$_POST['content']);
+	
+	if($_POST['content'] != '\0')
+	{
+		fputs($fichiertask,' ');
+		fputs($fichiertask,$_POST['content']);
+	}
 	fclose($fichiertask);
 
 header('location:tasklist.php');
