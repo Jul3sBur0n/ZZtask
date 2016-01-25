@@ -21,7 +21,7 @@ include 'sessionstarter.php';
 		<button class="btn" type="submit">Connexion<br/></button> <span class="reg"><?php echo'<a href="registeration.php" > Pas encore inscrit ? </a>';  ?></span>
 		</form>
 		<?php
-			if(isset($_SESSION))
+			if(isset($_SESSION['error']))
 			{
 				switch($_SESSION['error'])
 				{
