@@ -36,8 +36,12 @@ function checkParam($a)
 	fputs($fichiertask,$_POST['nom']);
 	fputs($fichiertask,' ');
 	fputs($fichiertask,$_POST['deadline']);
-    fputs($fichiertask,' ');
-	fputs($fichiertask,$_POST['content']);
+	
+	if($_POST['content'] != '\0')
+	{
+		fputs($fichiertask,' ');
+		fputs($fichiertask,$_POST['content']);
+	}
 	fclose($fichiertask);
 >>>>>>> 84930cff7ab55dcb2b962a1a211d099b40b7e93f
 
