@@ -13,8 +13,8 @@
 		
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-8 topbar"><h2>Menu</h2></div>
-				<div class="col-xs-6 col-md-4"><a class="btn btn-default" onclick="self.location.href='newtask.php'" role="button">Link</a></div>
+				<div class="topbar"><h2>Menu</h2></div>
+				<div><a class="btn btn-default" onclick="self.location.href='newtask.php'" role="button">New Task</a></div>
 			</div>
 		</div>
 		
@@ -26,6 +26,24 @@
 				<div class="col-xs-6 col-md-4 todo">
 						
 							<h2>To Do</h2>
+							
+							<?php
+
+	$fichier = fopen('db_task.txt','r');
+	$ligne = fgets($fichier);
+	while(!feof($fichier))
+	{
+		list($nom, $deadline) = explode(" ",$ligne,2);
+		echo $nom;
+		$ligne = fgets($fichier);
+	}
+	fclose($fichier);
+
+
+?>
+
+					
+					
 						
 				</div>
 				<div class="col-xs-6 col-md-4">
