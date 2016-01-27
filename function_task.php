@@ -26,8 +26,20 @@
 				list($code, $name, $deadline, $content) = explode(" ",$ligne,4);
 		}while(!feof($fichier) && ($name != $nom));
 		fclose($fichier);
-		$array = array($code,$bame,$deadline,$content);
+		$array = array($code,$name,$deadline,$content);
 		$ligne = implode(' ',$array);
+		return $ligne;
+	}
+	
+	function gettask()
+	{
+		$iterator = 0;
+		$fichier = fopen('db_task.txt','r');
+		while(!feof($fichier))
+		{
+			$ligne[$iterator] = fgets($fichier);
+			$iterator++;
+		}
 		return $ligne;
 	}
 	
@@ -35,6 +47,24 @@
 	{
 		$ligne = searchtask($nom);
 		file_put_contents('db_task.txt',array_unique(str_replace($ligne,'0',file_get_contents('db_task.txt'))));
+	}
+	
+	function showtask()
+	{
+		$arraytask = gettask();
+		foreach($arraytask as $task)
+		{
+			if(substr_count($task,' ') == 2)
+			{
+				list($code,$nom,$deadline) = explode(' ',$task);
+				echo "$nom </br>"; 
+			}
+			elseif(substr_count($task,' ') == 2)
+			{
+				list($code,$nom,$deadline,$content) = explode(' ',$task,4);
+				echo "$nom </br>";
+			}
+		}
 	}
 	
 	function uptask()

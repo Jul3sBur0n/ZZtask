@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php if($_SESSION['connexion'] == 0) header('location:index.php'); ?>
+<?php if($_SESSION['connexion'] == 0) header('location:index.php');
+include 'function_task.php';
+?>
 <html>
 	
 	<head>
@@ -28,7 +30,7 @@
 							<h2>To Do</h2>
 							
 							<?php
-	$fichier = fopen('db_task.txt','r');
+	/*$fichier = fopen('db_task.txt','r');
 	$ligne = fgets($fichier);
 	while(!feof($fichier))
 	{
@@ -36,7 +38,8 @@
 		echo $nom;
 		$ligne = fgets($fichier);
 	}
-	fclose($fichier);
+	fclose($fichier);*/
+	showtask();
 ?>
 
 					
