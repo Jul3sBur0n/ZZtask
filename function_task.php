@@ -46,10 +46,10 @@
 	function deletetask($nom)
 	{
 		$ligne = searchtask($nom);
-		file_put_contents('db_task.txt',array_unique(str_replace($ligne,'0',file_get_contents('db_task.txt'))));
+		file_put_contents('db_task.txt',str_replace($ligne,'0',file_get_contents('db_task.txt')));
 	}
 	
-	function showtask()
+	function displaytask($var)
 	{
 		$arraytask = gettask();
 		foreach($arraytask as $task)
@@ -57,18 +57,23 @@
 			if(substr_count($task,' ') == 2)
 			{
 				list($code,$nom,$deadline) = explode(' ',$task);
-				echo "$nom </br>"; 
+				if($var == $code)
+					echo "<p>Tâche : $nom </br>Fin : $deadline</p>";
 			}
-			elseif(substr_count($task,' ') == 2)
+			elseif(substr_count($task,' ') > 2)
 			{
 				list($code,$nom,$deadline,$content) = explode(' ',$task,4);
-				echo "$nom </br>";
+				echo "<p>Tâche : $nom </br>Fin : $deadline</br>Description : $content</p>";
 			}
 		}
 	}
 	
 	function uptask()
 	{
-		
+		$task = file_get_contents('db_task.txt');
+		echo "$task </br>";
+		$task = str_replace('0','',$task);
+		echo "$task </br>";
+		file_put_contents('db_task.txt',$task);
 	}
 ?>
