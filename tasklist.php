@@ -12,33 +12,28 @@ include 'function_task.php';
 	</head>
 	
 	<body>
+		<div class="topbar"><h2>Menu</h2></div>
+		<div><a onclick="self.location.href='newtask.php'" role="button">New Task</a></div>
 		
 		<div>
-			<div class="row">
-				<div class="topbar"><h2>Menu</h2></div>
-				<div><a onclick="self.location.href='newtask.php'" role="button">New Task</a></div>
+			<div class="todo">
+				<span class="center"><FONT size = 5 >To do</FONT></span>
+				<?php
+				displaytask(1);
+				?>
 			</div>
-		</div>
-		
-			<div>
-				<div class="todo">
-						
-							<h2>To Do</h2>
-							
-							<?php
-							displaytask(1);
-							?>
-
-					
-					
-						
-				</div>
-						<div class="inprogress">
-							<h2>In Progress</h2>
-						</div>
-						<div class="done">
-							<h2>Done</h2>
-						</div>
+			<div class="inprogress">
+				<span class="center"><FONT size = 5 >In Progress</FONT></span>
+				<?php
+				displaytask(2);
+				?>				
+			</div>
+			<div class="done">
+				<span class="center"><FONT size = 5 >Done</FONT></span>
+				<?php
+				displaytask(3);
+				?>
+			</div>
 		</div> 
 	
 	</body>

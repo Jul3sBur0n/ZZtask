@@ -2,10 +2,6 @@
 include 'sessionstarter.php';
 include 'function_task.php';
 
-function checkParam($a)
-{
-	return (isset($a) && !empty($a));
-}
 
 ?>
 <html>

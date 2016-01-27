@@ -1,4 +1,10 @@
 <?php
+
+	function checkParam($a)
+	{
+		return (isset($a) && !empty($a));
+	}
+	
 	function newtask($nom,$deadline,$content)
 	{
 		$fichier = fopen('db_task.txt','a+');
@@ -23,11 +29,15 @@
 		{
 			$ligne = fgets($fichier);
 			if(!feof($fichier))
-				list($code, $name, $deadline, $content) = explode(" ",$ligne,4);
-		}while(!feof($fichier) && ($name != $nom));
+				$arraytask= explode(' ',$ligne,3);
+		}while(!feof($fichier) && ($arraytask[1] != $nom));
 		fclose($fichier);
-		$array = array($code,$name,$deadline,$content);
-		$ligne = implode(' ',$array);
+		if($arraytask[1] == $nom)
+		{
+			$ligne = implode(' ',$arraytask);
+		}
+		else
+			$ligne=0;
 		return $ligne;
 	}
 	
@@ -49,6 +59,19 @@
 		file_put_contents('db_task.txt',str_replace($ligne,'0',file_get_contents('db_task.txt')));
 	}
 	
+	function uptask($nom)
+	{
+		$ligne = searchtask($nom);
+		if($ligne != 0)
+		{
+			list($code,$task)=explode(' ',$ligne,2);
+			$alltask = file_get_contents('db_task.txt');
+			$code=$code + 1;
+			$alltask = str_replace("$ligne","$code $task",$alltask);
+			file_put_contents('db_task.txt',$alltask);
+		}
+	}	
+	
 	function displaytask($var)
 	{
 		$arraytask = gettask();
@@ -58,22 +81,24 @@
 			{
 				list($code,$nom,$deadline) = explode(' ',$task);
 				if($var == $code)
-					echo "<p>Tâche : $nom </br>Fin : $deadline</p>";
+					echo "<div class = \"task\"><p class=\"desctask\">Tâche : $nom </br>Fin : $deadline</p>
+					<form class=\"uptask\" method = \"post\" action = \"uptask.php\">
+					<input type=\"hidden\" value=$nom name=\"nom\">
+					<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form></div>";
 			}
 			elseif(substr_count($task,' ') > 2)
 			{
 				list($code,$nom,$deadline,$content) = explode(' ',$task,4);
-				echo "<p>Tâche : $nom </br>Fin : $deadline</br>Description : $content</p>";
+				if($var == $code)
+					echo "<div class=\"task\"><p class=\"desctask\">Tâche : $nom </br>Fin : $deadline</p>
+					<form class=\"uptask\" method = \"post\" action = \"uptask.php\">
+					<input type=\"hidden\" value=$nom name=\"nom\">
+					<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>
+					<p class=\"content\">Description : $content</p></div>"
+					;
 			}
 		}
 	}
 	
-	function uptask()
-	{
-		$task = file_get_contents('db_task.txt');
-		echo "$task </br>";
-		$task = str_replace('0','',$task);
-		echo "$task </br>";
-		file_put_contents('db_task.txt',$task);
-	}
+
 ?>

@@ -3,10 +3,7 @@ include 'sessionstarter.php';
 
 include 'function_connexion.php';
 
-function checkParam($a)
-{
-	return (isset($a) && !empty($a));
-}
+
 ?>
 <html>
 	<head>

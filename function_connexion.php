@@ -13,4 +13,9 @@ function verificationConnexion($pseudo,$password)
 	return($user == $pseudo && $pass == $password);
 }
 
+function checkParam($a)
+{
+	return (isset($a) && !empty($a));
+}
+
 ?>
