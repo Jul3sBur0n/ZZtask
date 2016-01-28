@@ -9,10 +9,6 @@ php:
 
 install: true
 
-before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
-
 
 script: phptest.php
 
