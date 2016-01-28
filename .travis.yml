@@ -10,7 +10,6 @@ php:
 install: true
 
 
-script: touch db_task.txt
-        touch db_user.txt
-        phpunit test_task.php
+script: ./test.sh
+
 
