@@ -9,19 +9,6 @@ php:
 
 install: true
 
-before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
 
+script: phpunit test_task.php
 
-script: phptest.php
-
-matrix:
-  allow_failures:
-    - php: 5.6
-    - php: hhvm
-  fast_finish: true
-
-notifications:
-    on_success: never
-    on_failure: always
