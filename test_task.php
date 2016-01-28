@@ -9,7 +9,7 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 		
 		$fileCont = file_get_contents( "db_task.txt" );
 		$lines = explode( "\n", $fileCont );
-		$line = $lines[count($lines)-1];
+		$line = $lines[count($lines)-2];
 		$this->assertEquals("1 Test 23-01-2016 This is a test",$line);
 	
 		
