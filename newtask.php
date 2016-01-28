@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<?php if($_SESSION['connexion'] == 0) header('location:index.php'); ?>
+<?php if($_SESSION['connexion'] == 0) header('location:index.php');
 
-<?php
 include 'sessionstarter.php';
 
 function checkParam($a)
@@ -23,15 +22,10 @@ function checkParam($a)
 		<div class = "connexion">
 		<form name ="NewTask" method="post" action="verification_task.php">
 		<input class="input-form" type="text" name="nom" id="nom" placeholder="Nom" title="Nommez votre tache" required /><br/>
-		<input class="input-form" type="date" name="deadline" id="deadline" placeholder="Deadline" title="jj/mm/aaaa" required /><br/>
-		<input class="input-form" type ="textarea" name="content" id="content" placeholder="Descriptif/Message"/><br/>
-		<button class="btn">Enregistrement<br/></button> <?php echo '<p>Cliquez <a href="./tasklist.php">ici</a> pour annuler</p>'; ?>
+		<input class="input-form" type="text" name="deadline" id="deadline" placeholder="Deadline" title="jj/mm/aaaa" required /><br/>
+		<textarea class="input-form input-area" type ="textarea" name="content" id="content" placeholder="Descriptif/Message"/></textarea><br/>
+		<button class="btn" type="submit">Enregistrer<br/></button> <button class="btn" href="tasklist.php">Annuler<br/></button>
 		</form>
 		</div>
-	
 	</body>
-
-
-
-
 </html>

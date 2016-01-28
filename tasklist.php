@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <?php if($_SESSION['connexion'] == 0) header('location:index.php');
-include 'function_task.php';
+include 'function_task_admin.php';
 ?>
 <html>
-	
 	<head>
-		<meta charset="utf_8">
+		<meta charset="utf-8">
 		<title> Liste des taches </title>
 		<link rel="stylesheet"  href="task.css">
-	
 	</head>
 	
 	<body>
@@ -21,6 +19,7 @@ include 'function_task.php';
 				<?php
 				displaytask(1);
 				?>
+				<a class="btn btn-add" href="newtask.php"><b>+</b></a>
 			</div>
 			<div class="inprogress">
 				<span class="center"><FONT size = 5 >In Progress</FONT></span>
