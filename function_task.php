@@ -35,7 +35,7 @@
 			}while(!feof($fichier) && ($arraytask[1] != $nom));
 			fclose($fichier);
 		}
-		if($arraytask[1] == $nom)
+		if(isset($arraytask)&&$arraytask[1] == $nom)
 		{
 			$ligne = implode(' ',$arraytask);
 		}
