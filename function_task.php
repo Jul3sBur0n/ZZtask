@@ -15,7 +15,7 @@
 			{
 				fputs($fichier,"1 $nom $deadline");
 				if(checkParam($content))
-					fputs($fichier," $content");
+					fputs($fichier," ".escapedesc($content));
 				fputs($fichier,"\n");
 			}
 		}
@@ -61,19 +61,68 @@
 	}
 	
 	
-	function uptask($nom)
+	function uptask($nom,$up = 1)
 	{
 		$ligne = searchtask($nom);
-		if($ligne != 0)
+		if($ligne != 0 && $up != 0)
 		{
 			list($code,$task)=explode(' ',$ligne,2);
 			$alltask = file_get_contents('db_task.txt');
-			$code=$code + 1;
+			$code=$code + $up;
 			$alltask = str_replace("$ligne","$code $task",$alltask);
 			file_put_contents('db_task.txt',$alltask);
 		}
 	}	
 
+	function deletetask($nom)
+	{
+		$ligne = searchtask($nom);
+		$arraytask = gettask();
+		$fichier = fopen('db_task.txt',w);
+		if($fichier)
+		{
+			foreach($arraytask as $task)
+			{
+				if($ligne != $task)
+					fputs($fichier,"$task");
+			}
+			fclose($fichier);
+		}
+	}
 	
-
+	function edittask($code,$nom,$deadline,$content,$oldname)
+	{
+		deletetask($oldname);
+		newtask($nom,$deadline,$content);
+		uptask($nom,$code-1);
+	}
+	
+	function escapedesc($desc)
+	{
+		$desc = str_replace( '\\', '\\\\', $desc );
+		$desc = str_replace( "\r\n", '\\n', $desc );
+		$desc = str_replace( "\n", '\\n', $desc );
+		$desc = str_replace( "\r", '\\n', $desc );
+		while ( preg_match( '#\\\\n$#', $desc ) )
+			$desc = preg_replace( '#\\\\n$#', '', $desc );
+		return $desc;
+	}
+	
+	function _unescape_replacer( $matches )
+	{
+		return ( $matches[1] === 'n' ) ? "\n" : '\\';
+	}
+	
+	function unescapedesc($desc)
+	{
+		$desc = preg_replace_callback( '#\\\\(.)#', '_unescape_replacer', $desc );
+		return $desc;
+	}
+	
+	function unescapetohtml($desc)
+	{
+		$desc = unescapedesc($desc);
+		$desc = str_replace("\n","<br>",$desc);
+		return $desc;
+	}
 ?>

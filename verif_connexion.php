@@ -28,7 +28,6 @@ else
 	{
 		$_SESSION['connexion'] = 1;
 		header('Location:tasklist.php');
-		echo "Tu as bien été identifié";
 	}
 	else
 	{

@@ -2,11 +2,6 @@
 
 include 'function_task.php';
 
-	function deletetask($nom)
-	{
-		$ligne = searchtask($nom);
-		file_put_contents('db_task.txt',str_replace($ligne,'0',file_get_contents('db_task.txt')));
-	}
 
 	function displaytask($var)
 	{
@@ -17,34 +12,49 @@ include 'function_task.php';
 			{
 				list($code,$nom,$deadline) = explode(' ',$task);
 				if($var == $code)
+				{
 					echo "<div class = \"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
-					<form class=\"suptask\" method = \"post\" action = \"uptask.php\">
-					<input type=\"hidden\" value=$nom name=\"nom\">
+					<form class=\"suptask\" method=\"post\" action=\"gestion_task.php\">
+					<input type=\"hidden\" value=$nom name=\"del\">
 					<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
-					<form class=\"edittask\" method = \"post\" action = \"uptask.php\">
-					<input type=\"hidden\" value=$nom name=\"nom\">
-					<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
-					<form class=\"uptask\" method = \"post\" action = \"uptask.php\">
-					<input type=\"hidden\" value=$nom name=\"nom\">
-					<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form></div>";
+					<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
+					<input type=\"hidden\" value=$nom name=\"edit\">
+					<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>";
+					if($code != 3)
+						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
+						<input type=\"hidden\" value=$nom name=\"nom\">
+						<button class=\"btn btnup\" type=\"submit\"><b>></b></button></form>";
+					echo "</div>";
+				}
 			}
 			elseif(substr_count($task,' ') > 2)
 			{
 				list($code,$nom,$deadline,$content) = explode(' ',$task,4);
+				$content = unescapetohtml($content);
 				if($var == $code)
-					echo "<div class=\"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
-					<form class=\"suptask\" method = \"post\" action = \"uptask.php\">
-					<input type=\"hidden\" value=$nom name=\"nom\">
-					<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
-					<form class=\"edittask\" method = \"post\" action = \"uptask.php\">
-					<input type=\"hidden\" value=$nom name=\"nom\">
-					<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
-					<form class=\"uptask\" method = \"post\" action = \"uptask.php\">
-					<input type=\"hidden\" value=$nom name=\"nom\">
-					<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>
-					<p class=\"content\">Description : $content</p></div>";
+					if($code != 3)
+						echo "<div class=\"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
+						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
+						<input type=\"hidden\" value=$nom name=\"del\">
+						<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
+						<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
+						<input type=\"hidden\" value=$nom name=\"edit\">
+						<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
+						<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
+						<input type=\"hidden\" value=$nom name=\"up\">
+						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>
+						<p class=\"content\">Description : $content</p></div>";
+					else
+						echo "<div class = \"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
+						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
+						<input type=\"hidden\" value=$nom name=\"del\">
+						<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
+						<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
+						<input type=\"hidden\" value=$nom name=\"edit\">
+						<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
+						<p class=\"content\">Description : $content</p></div>";
 			}
 		}
 	}
-
+	
 ?>
