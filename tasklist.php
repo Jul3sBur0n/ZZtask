@@ -11,7 +11,6 @@ include 'function_task_admin.php';
 	
 	<body>
 		<div class="topbar"><h2>Menu</h2></div>
-		<div><a onclick="self.location.href='newtask.php'" role="button">New Task</a></div>
 		
 		<div>
 			<div class="todo">
