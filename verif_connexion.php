@@ -27,6 +27,8 @@ else
 	if(verificationConnexion($_POST['pseudo'],$_POST['password']))
 	{
 		$_SESSION['connexion'] = 1;
+		$_SESSION['admin'] = isAdmin($_POST['pseudo']);
+		$_SESSION['login'] = $_POST['pseudo'];
 		header('Location:tasklist.php');
 
 	}

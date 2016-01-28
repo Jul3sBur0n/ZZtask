@@ -57,4 +57,11 @@ function registerationcheck($login)
 	return $res;
 }
 
+function isAdmin($login)
+{
+	$ligne = searchuser($login);
+	list($code,$rest) = explode (";:!:;",$ligne);
+	return $code;
+}
+
 ?>
