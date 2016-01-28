@@ -19,7 +19,7 @@ include 'function_task.php';
 					<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
 					<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
 					<input type=\"hidden\" value=$nom name=\"edit\">
-					<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>";
+					<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>\n";
 					if($code != 3)
 						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=$nom name=\"nom\">
@@ -41,7 +41,7 @@ include 'function_task.php';
 						<input type=\"hidden\" value=$nom name=\"edit\">
 						<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
 						<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"up\">
+						<input type=\"hidden\" value=$nom name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>
 						<p class=\"content\">Description : $content</p></div>";
 					else

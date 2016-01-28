@@ -24,10 +24,11 @@ if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']))
 }
 else
 {
-	if(verificationConnexion($_POST['pseudo'],$_POST['password']) )
+	if(verificationConnexion($_POST['pseudo'],$_POST['password']))
 	{
 		$_SESSION['connexion'] = 1;
 		header('Location:tasklist.php');
+
 	}
 	else
 	{

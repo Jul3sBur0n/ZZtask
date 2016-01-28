@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php
-if(!isset($_SESSION))
-{
-session_start();
-}
+include 'sessionstarter.php';
+include 'function_connexion.php'
 ?>
 
 <html>
@@ -12,24 +10,14 @@ session_start();
 
 <?php
 
-function checkParam($a)
-{	
-	return (isset($a) && !empty($a));
-}
 
-
-if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']) || !checkParam($_POST['confmail']) || !checkParam($_POST['mail']) || !checkParam($_POST['confpass'])) //Oublie d'un champ
+if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']) || !checkParam($_POST['confpass'])) //Oublie d'un champ
 
 {
 	header('location: registeration.php');
-    echo '<p>une erreur s\'est produite pendant votre identification.
-
-    Vous devez remplir tous les champs</p>
-
-    <p>Cliquez <a href="./registeration.php">ici</a> pour revenir</p>';
 
 }
-elseif($_POST['confpass']!=$_POST['password'] || $_POST['mail']!=$_POST['confmail'])
+elseif($_POST['confpass']!=$_POST['password'])
 {
 	echo '<p>une erreur s\'est produite pendant votre identification.
 
@@ -45,15 +33,17 @@ elseif(strpbrk($_POST['pseudo']," ") || strpbrk($_POST['password']," "))
 }
 else
 {
-	echo 'pas d\'erreur</p>';
-	$fichier = fopen('db_user.txt','a+');
-	fputs($fichier,$_POST['pseudo']);
-	fputs($fichier,' ');
-	fputs($fichier,$_POST['password']);
-	fputs($fichier,' ');
-	fputs($fichier,$_POST['mail']);	
-	fputs($fichier,"\n");
-	fclose($fichier);
+	if(registerationcheck($_POST['pseudo']))
+	{
+		newuser($_POST['pseudo'],$_POST['password']);
+		$_SESSION['login'] = $_POST['pseudo'];
+		header('location: index.php');
+	}
+	else
+	{
+		$_SESSION['error'] = 30;
+		header('location: registeration.php');
+	}
 }
 ?>
 </body>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 include 'sessionstarter.php';
+$login = $_SESSION['login'];
 ?>
 
 <link rel="stylesheet" href="back.css">
@@ -16,7 +17,7 @@ include 'sessionstarter.php';
 	<body>
 		<div class="connexion">
 		<form class="premier" name ="Connexion" method="post" action="verif_connexion.php">
-		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login" title="4 à 15 caractères" "<?php if(isset($_SESSION)) {echo 'value = "$_SESSION[\'login\']"';} ?>" required /><br/>
+		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login" title="4 à 15 caractères" <?php if(isset($_SESSION)) {echo "value = $login";} ?> required /><br/>
 		<input class="input-form" type="password" name="password" id="password" placeholder="Password" title="4 à 20 caractères" required /> <br/><br/>
 		<button class="btn" type="submit">Connexion<br/></button> <a class = "reg" href="registeration.php" > Pas encore inscrit ? </a>
 		</form>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<?php if($_SESSION['connexion'] == 0) header('location:index.php');
+<?php
 include 'function_task_admin.php';
+include_once 'sessionstarter.php';
+if($_SESSION['connexion'] == 0) header('location:index.php');
 ?>
 <html>
 	<head>
@@ -10,7 +12,6 @@ include 'function_task_admin.php';
 	</head>
 	
 	<body>
-		<div class="topbar"><h2>Menu</h2></div>
 		
 		<div>
 			<div class="todo">
