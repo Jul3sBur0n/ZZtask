@@ -7,24 +7,12 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 	public function testAddTask(){
 		newtask("Test","23-01-2016","This is a test");
 		
-		$fic = fopen("db_task.txt", "r");
-		$line = fgets($fic);
-		fclose($fic);
-		$arr = json_decode($line,true);
+		$fileCont = get_file_contents( "db_task.txt" );
+		$lines = explode( "\n", $fileCont );
+		$line = $lines[count($line)-1];
+		$this->assertEquals("1 Test 23-01-2016 This is a test",$line);
+	
 		
-		$this->assertArrayHasKey('Test', $arr[0]);
-		
-	}
-	public function testDeleteTask(){
-		
-		deletetask('Test');
-		
-		$fic = fopen("db_task.txt", "r");
-		$line = fgets($fic);
-		fclose($fic);
-		$arr = json_decode($line,true);
-		
-		$this->assertNotArrayHasKey('Test', $arr[0]);
 	}
 }
 ?>
