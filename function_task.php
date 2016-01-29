@@ -25,7 +25,7 @@
 	function searchtask($nom)
 	{
 		$fichier = fopen('db_task.txt','r');
-		if($fichier)
+		if($fichier || !feof($fichier))
 		{
 			echo "$nom<br>";
 			do
