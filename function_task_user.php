@@ -33,8 +33,7 @@ include 'function_task.php';
 						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>";
-					echo "</div>
-						<p class=\"content\">Description : $content</p></div>";
+					echo "<p class=\"content\">Description : $content</p></div>";
 				}
 
 			}

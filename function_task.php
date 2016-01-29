@@ -20,6 +20,7 @@
 			}
 		}
 		fclose($fichier);
+		return $ligne;
 	}
 	
 	function searchtask($nom)
@@ -38,7 +39,7 @@
 		if(isset($arraytask)&&$arraytask[1] == $nom)
 		{
 			$ligne = implode(";:!:;",$arraytask);
-			$ligne = substr($ligne,0,-1);
+			//$ligne = substr($ligne,0,-1);
 		}
 		else
 			$ligne=0;
@@ -67,11 +68,24 @@
 		$ligne = searchtask($nom);
 		if($ligne != 0 && $up != 0)
 		{
-			list($code,$task)=explode(';:!:;',$ligne,2);
-			$alltask = file_get_contents('db_task.txt');
-			$code=$code + $up;
-			$alltask = str_replace("$ligne","$code;:!:;$task",$alltask);
-			file_put_contents('db_task.txt',$alltask);
+			$arraytask = gettask();
+			$fichier = fopen('db_task.txt',w);
+			if($fichier)
+			{
+				foreach($arraytask as $task)
+				{
+					if($ligne != $task)
+						fputs($fichier,$task);
+					else
+					{
+						list($code,$task2)=explode(';:!:;',$task,2);
+						$code = $code + $up;
+						fputs($fichier,$code.";:!:;".$task2);
+					
+					}
+				}
+			fclose($fichier);
+			}
 		}
 	}	
 
@@ -84,7 +98,6 @@
 		{
 			foreach($arraytask as $task)
 			{
-				substr($task,0,-1);
 				if($ligne != $task)
 					fputs($fichier,$task);
 			}
@@ -126,5 +139,18 @@
 		$desc = unescapedesc($desc);
 		$desc = str_replace("\n","<br>",$desc);
 		return $desc;
+	}
+	
+	function taskcheck($deadline)
+	{
+		$a = false;
+		if(substr_count('-',$deadline) == 2)
+		{
+			$a = 51;
+			list($day,$month,$year) = explode("-",$deadline);
+			if(is_numeric($day) && is_numeric($month) && is_numeric($year) && strlen($day) == 2 && strlen($month) == 2 && strlen($year) == 4)
+				$a = true;
+		}
+		return $a;
 	}
 ?>
