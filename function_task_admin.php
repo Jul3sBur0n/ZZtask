@@ -8,9 +8,9 @@ include 'function_task.php';
 		$arraytask = gettask();
 		foreach($arraytask as $task)
 		{
-			if(substr_count($task,' ') == 2)
+			if(substr_count($task,';:!:;') == 2)
 			{
-				list($code,$nom,$deadline) = explode(' ',$task);
+				list($code,$nom,$deadline) = explode(';:!:;',$task);
 				if($var == $code)
 				{
 					echo "<div class = \"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
@@ -27,9 +27,9 @@ include 'function_task.php';
 					echo "</div>";
 				}
 			}
-			elseif(substr_count($task,' ') > 2)
+			elseif(substr_count($task,';:!:;') > 2)
 			{
-				list($code,$nom,$deadline,$content) = explode(' ',$task,4);
+				list($code,$nom,$deadline,$content) = explode(';:!:;',$task,4);
 				$content = unescapetohtml($content);
 				if($var == $code)
 					if($code != 3)

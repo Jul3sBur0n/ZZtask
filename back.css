@@ -1,3 +1,14 @@
+html
+{
+	height:100%;
+}
+
+body
+{
+	height:100%;
+	position: relative;
+	top: 0;
+}
 
 .btn
 {
@@ -38,13 +49,15 @@ a:hover{
 
 .connexion
 {
+	position: absolute;
+	left:50%;
 	border: solid;
-	margin-top: 50px;
 	width: 500px;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	margin: auto;
-	margin-top: 250px;
+	margin-left:-250px;
+	top:100px;
 	border-radius: 8px;
 }
 
@@ -66,16 +79,6 @@ a:hover{
 	text-align: center
 }
 
-/*header
-{
-	background-color: purple;
-	width: 100.92%;
-	height: 100px;
-	margin-right: 0px;
-	margin-top: -10px;
-	margin-left: -10px;
-	
-}*/
 
 .input-form
 {
@@ -114,3 +117,16 @@ a:hover{
 	position: relative;
 	left: 100px;
 	top: 5px;
+}
+
+.deco
+{
+	position:absolute;
+	width:100%;
+}
+
+.btndeco
+{
+	left:100%;
+	margin-left:-136px;
+}

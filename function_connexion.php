@@ -64,4 +64,9 @@ function isAdmin($login)
 	return $code;
 }
 
+function logcheck($a)
+{
+	return(strlen($a) >= 4);
+}
+
 ?>

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <?php
-include 'function_task_admin.php';
-include_once 'sessionstarter.php';
+
+include 'sessionstarter.php';
 if($_SESSION['connexion'] == 0) header('location:index.php');
+if($_SESSION['admin'])
+	include 'function_task_admin.php';
+else
+	include 'function_task_user.php';
 ?>
 <html>
 	<head>
@@ -13,6 +17,9 @@ if($_SESSION['connexion'] == 0) header('location:index.php');
 	
 	<body>
 		
+		<form class="deco" method="post" action="index.php">
+		<input type="hidden" value="1" name="deco">
+		<button class="btn btndeco" type="submit"><b>Déconnexion</b></button> </form>
 		<div>
 			<div class="todo">
 				<span class="center"><FONT size = 5 >To do</FONT></span>

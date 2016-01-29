@@ -12,25 +12,26 @@ include 'function_connexion.php'
 
 
 if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']) || !checkParam($_POST['confpass'])) //Oublie d'un champ
-
 {
+	$_SESSION['error'] = 10;
 	header('location: registeration.php');
-
+}
+elseif(strpbrk($_POST['pseudo'],";:!:;") || strpbrk($_POST['password'],";:!:; "))
+{
+	$_SESSION['error'] = 40;
+	header('location: registeration.php');
 }
 elseif($_POST['confpass']!=$_POST['password'])
 {
-	echo '<p>une erreur s\'est produite pendant votre identification.
 
-    Les champs Email et Password doivent être confirmés</p>
-
-	<p>Cliquez <a href="./registeration.php">ici</a> pour revenir</p>';
 }
-elseif(strpbrk($_POST['pseudo']," ") || strpbrk($_POST['password']," "))
+
+elseif(!logcheck($_POST['password']) || !logcheck($_POST['pseudo']))
 {
-	echo '<p>Un espace est présent dans votre login ou password</p>
-	
-	<p>Cliquez <a href="./registeration.php">ici</a> pour revenir</p>';
+	$_SESSION['error'] = 50;
+	header('location: registeration.php');	
 }
+
 else
 {
 	if(registerationcheck($_POST['pseudo']))

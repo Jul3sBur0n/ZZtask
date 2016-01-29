@@ -4,8 +4,8 @@ include 'function_task_admin.php';
 
 if(isset($_POST['nom']))
 {
-uptask($_POST['nom']);
-header('Location:tasklist.php');
+	uptask($_POST['nom']);
+	header('Location:tasklist.php');
 }
 
 elseif(isset($_POST['del']))
@@ -17,11 +17,11 @@ elseif(isset($_POST['del']))
 elseif(isset($_POST['edit']))
 {
 	$ligne = searchtask($_POST['edit']);
-	if(substr_count($ligne,' ') == 2)
-		list($code,$nom,$deadline) = explode(' ',$ligne);
-	elseif(substr_count($ligne,' ') > 2)
+	if(substr_count($ligne,';:!:;') == 2)
+		list($code,$nom,$deadline) = explode(';:!:;',$ligne);
+	elseif(substr_count($ligne,';:!:;') > 2)
 	{
-		list($code,$nom,$deadline,$content) = explode(' ',$ligne,4);
+		list($code,$nom,$deadline,$content) = explode(';:!:;',$ligne,4);
 		$content = unescapedesc($content);
 	}
 	echo "<html>
@@ -32,6 +32,9 @@ elseif(isset($_POST['edit']))
 	</header>
 	
 	<body>
+		<form class=\"deco\" method=\"post\" action=\"index.php\">
+		<input type=\"hidden\" value=\"1\" name=\"deco\">
+		<button class=\"btn btndeco\" type=\"submit\"><b>Déconnexion</b></button> </form>
 		<div class = \"connexion\">
 		<form name =\"NewTask\" method=\"post\" action=\"gestion_task.php\">
 		<select class = \"input-form\" name=\"code\" id=\"code\">
@@ -39,10 +42,10 @@ elseif(isset($_POST['edit']))
 			<option value=\"2\""; if($code ==2) {echo "selected";} echo ">In progress</option>
 			<option value=\"3\""; if($code ==3) {echo "selected";} echo ">Done</option>
 		<input type=\"hidden\" value=$nom name=\"oldname\">
-		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\"Nom de votre tâche\" required /><br/>
-		<input class=\"input-form\" type=\"text\" name=\"deadline\" id=\"deadline\" value=\"$deadline\" title=\"jj/mm/aaaa\" required /><br/>
+		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\"Nom de votre tâche\" required /><br>
+		<input class=\"input-form\" type=\"text\" name=\"deadline\" id=\"deadline\" value=\"$deadline\" title=\"jj/mm/aaaa\" required /><br>
 		<textarea class=\"input-form input-area\" type =\"textarea\" name=\"content\" id=\"content\" placeholder=\"Descriptif/Message\"/>$content</textarea><br/>
-		<button class=\"btn\" type=\"submit\">Enregistrer<br/></button> <button class=\"btn\" href=\"tasklist.php\">Annuler<br/></button>
+		<button class=\"btn\" type=\"submit\">Enregistrer<br></button> <button class=\"btn\" href=\"tasklist.php\">Annuler<br></button>
 		</form>
 		</div>
 	</body>

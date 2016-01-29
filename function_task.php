@@ -13,9 +13,9 @@
 			$ligne = searchtask($nom);
 			if($ligne == 0)
 			{
-				fputs($fichier,"1 $nom $deadline");
+				fputs($fichier,"1;:!:;$nom;:!:;$deadline");
 				if(checkParam($content))
-					fputs($fichier," ".escapedesc($content));
+					fputs($fichier,";:!:;".escapedesc($content));
 				fputs($fichier,"\n");
 			}
 		}
@@ -31,13 +31,13 @@
 			{
 				$ligne = fgets($fichier);
 				if(!feof($fichier))
-					$arraytask= explode(' ',$ligne,3);
+					$arraytask= explode(";:!:;",$ligne,3);
 			}while(!feof($fichier) && ($arraytask[1] != $nom));
 			fclose($fichier);
 		}
 		if(isset($arraytask)&&$arraytask[1] == $nom)
 		{
-			$ligne = implode(' ',$arraytask);
+			$ligne = implode(";:!:;",$arraytask);
 		}
 		else
 			$ligne=0;
@@ -66,10 +66,10 @@
 		$ligne = searchtask($nom);
 		if($ligne != 0 && $up != 0)
 		{
-			list($code,$task)=explode(' ',$ligne,2);
+			list($code,$task)=explode(';:!:;',$ligne,2);
 			$alltask = file_get_contents('db_task.txt');
 			$code=$code + $up;
-			$alltask = str_replace("$ligne","$code $task",$alltask);
+			$alltask = str_replace("$ligne","$code;:!:;$task",$alltask);
 			file_put_contents('db_task.txt',$alltask);
 		}
 	}	
