@@ -38,7 +38,7 @@
 		if(isset($arraytask)&&$arraytask[1] == $nom)
 		{
 			$ligne = implode(";:!:;",$arraytask);
-			$ligne = substr($ligne,0,-2);
+			$ligne = substr($ligne,0,-1);
 		}
 		else
 			$ligne=0;
@@ -84,7 +84,7 @@
 		{
 			foreach($arraytask as $task)
 			{
-				substr($task,0,-2);
+				substr($task,0,-1);
 				if($ligne != $task)
 					fputs($fichier,$task);
 			}
