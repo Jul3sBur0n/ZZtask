@@ -15,14 +15,14 @@ include 'function_task.php';
 				{
 					echo "<div class = \"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
 					<form class=\"suptask\" method=\"post\" action=\"gestion_task.php\">
-					<input type=\"hidden\" value=$nom name=\"del\">
+					<input type=\"hidden\" value=\"$nom\" name=\"del\">
 					<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
 					<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
-					<input type=\"hidden\" value=$nom name=\"edit\">
+					<input type=\"hidden\" value=\"$nom\" name=\"edit\">
 					<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>\n";
 					if($code != 3)
 						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"nom\">
+						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button></form>";
 					echo "</div>";
 				}
@@ -35,22 +35,22 @@ include 'function_task.php';
 					if($code != 3)
 						echo "<div class=\"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
 						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"del\">
+						<input type=\"hidden\" value=\"$nom\" name=\"del\">
 						<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
 						<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"edit\">
+						<input type=\"hidden\" value=\"$nom\" name=\"edit\">
 						<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
 						<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"nom\">
+						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>
 						<p class=\"content\">Description : $content</p></div>";
 					else
 						echo "<div class = \"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
 						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"del\">
+						<input type=\"hidden\" value=\"$nom\" name=\"del\">
 						<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
 						<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"edit\">
+						<input type=\"hidden\" value=\"$nom\" name=\"edit\">
 						<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
 						<p class=\"content\">Description : $content</p></div>";
 			}

@@ -15,7 +15,7 @@ include 'function_task.php';
 					echo "<div class = \"task\"><p class=\"desctask-user\">Tâche : $nom </br>Fin : $deadline</p>";
 					if($code != 3)
 						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"nom\">
+						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>";
 					echo "</div>";
 				}
@@ -31,7 +31,7 @@ include 'function_task.php';
 					echo "<div class = \"task\"><p class=\"desctask-user\">Tâche : $nom </br>Fin : $deadline</p>";
 					if($code != 3)
 						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
-						<input type=\"hidden\" value=$nom name=\"nom\">
+						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>";
 					echo "</div>
 						<p class=\"content\">Description : $content</p></div>";
