@@ -21,26 +21,8 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 	public function testSearchTask()
 	{
 		newtask("Test3","23/25/2016","");
-		$nom = "Test3"
-		$fichier = fopen('db_task.txt','r');
-		if($fichier)
-		{
-			echo $nom."<br>";
-			do
-			{
-				$ligne = fgets($fichier);
-				if(!feof($fichier))
-					$arraytask= explode(";:!:;",$ligne,3);
-				echo $arraytask[1]."<br>";
-			}while(!feof($fichier) && ($arraytask[1] != $nom));
-			fclose($fichier);
-		}
-		if(isset($arraytask)&&$arraytask[1] == $nom)
-		{
-			$ligne = implode(";:!:;",$arraytask);
-		}
-		else
-			$ligne=0;
+		
+		$lignes = searchtask("Test3");
 		$this->assertEquals("1;:!:;Test3;:!:;23/25/2016",$lignes);
 	}	
 		
