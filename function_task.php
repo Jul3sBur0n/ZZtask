@@ -27,12 +27,12 @@
 		$fichier = fopen('db_task.txt','r');
 		if($fichier || !feof($fichier))
 		{
-			echo "$nom<br>";
 			do
 			{
 				$ligne = fgets($fichier);
 				if(!feof($fichier))
 					$arraytask= explode(";:!:;",$ligne,3);
+				echo "$nom<br>";
 			}while(!feof($fichier) && ($arraytask[1] != $nom));
 			fclose($fichier);
 		}
