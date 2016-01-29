@@ -32,7 +32,6 @@
 				$ligne = fgets($fichier);
 				if(!feof($fichier))
 					$arraytask= explode(";:!:;",$ligne,3);
-				echo "$nom<br>";
 			}while(!feof($fichier) && ($arraytask[1] != $nom));
 			fclose($fichier);
 		}
