@@ -42,8 +42,8 @@ elseif(isset($_POST['edit']))
 			<option value=\"2\""; if($code ==2) {echo "selected";} echo ">In progress</option>
 			<option value=\"3\""; if($code ==3) {echo "selected";} echo ">Done</option>
 		<input type=\"hidden\" value=$nom name=\"oldname\">
-		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\"Nom de votre tâche\" required /><br>
-		<input class=\"input-form\" type=\"text\" name=\"deadline\" id=\"deadline\" value=\"$deadline\" title=\"jj/mm/aaaa\" required /><br>
+		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\"Nom de votre tâche\" /><br>
+		<input class=\"input-form\" type=\"text\" name=\"deadline\" id=\"deadline\" value=\"$deadline\" title=\"jj/mm/aaaa\"/><br>
 		<textarea class=\"input-form input-area\" type =\"textarea\" name=\"content\" id=\"content\" placeholder=\"Descriptif/Message\"/>$content</textarea><br/>
 		<button class=\"btn\" type=\"submit\">Enregistrer<br></button> <button class=\"btn\" href=\"tasklist.php\">Annuler<br></button>
 		</form>

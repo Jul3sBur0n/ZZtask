@@ -7,19 +7,19 @@
 	
 	function newtask($nom,$deadline,$content)
 	{
-		$fichier = fopen('db_task.txt','a+');
-		if($fichier)
+		$ligne = searchtask($nom);
+		if($ligne == 0)
 		{
-			$ligne = searchtask($nom);
-			if($ligne == 0)
+			$fichier = fopen('db_task.txt','a+');
+			if($fichier)
 			{
 				fputs($fichier,"1;:!:;$nom;:!:;$deadline");
 				if(checkParam($content))
 					fputs($fichier,";:!:;".escapedesc($content));
 				fputs($fichier,"\n");
+				fclose($fichier);
 			}
 		}
-		fclose($fichier);
 		return $ligne;
 	}
 	
@@ -141,16 +141,4 @@
 		return $desc;
 	}
 	
-	function taskcheck($deadline)
-	{
-		$a = false;
-		if(substr_count('-',$deadline) == 2)
-		{
-			$a = 51;
-			list($day,$month,$year) = explode("-",$deadline);
-			if(is_numeric($day) && is_numeric($month) && is_numeric($year) && strlen($day) == 2 && strlen($month) == 2 && strlen($year) == 4)
-				$a = true;
-		}
-		return $a;
-	}
 ?>
