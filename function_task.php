@@ -39,6 +39,7 @@
 		if(isset($arraytask)&&$arraytask[1] == $nom)
 		{
 			$ligne = implode(";:!:;",$arraytask);
+			$ligne = str_replace("\n","",$ligne);
 		}
 		else
 			$ligne=0;
