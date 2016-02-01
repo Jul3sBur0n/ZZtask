@@ -2,7 +2,7 @@
 
 define('TXT_LANG', 'EN');
 
-define('TXT_DECO', 'Déconnexion');
+define('TXT_DECO', 'DÃ©connexion');
 
 //------------------------------------------------------
 // index.php & registration.php
@@ -17,15 +17,15 @@ define('TXT_ENREGISTREMENT', 'Inscription');
 
 define('TXT_ERROR_10', 'Erreur champ vide');
 define('TXT_ERROR_20', 'Erreur d\'identification');
-define('TXT_ERROR_30', 'Nom d\'utilisateur déjà utilisé');
-define('TXT_ERROR_40', 'Caractère non admis (! ; :)');
-define('TXT_ERROR_50', 'Nombre de caractère insuffisant (min 4)');
+define('TXT_ERROR_30', 'Nom d\'utilisateur dÃ©jÃ  utilisÃ©');
+define('TXT_ERROR_40', 'CaractÃ¨re non admis (! ; :)');
+define('TXT_ERROR_50', 'Nombre de caractÃ¨re insuffisant (min 4)');
 
 //------------------------------------------------------
 // function_task_user.php & function_task_admin.php
 //------------------------------------------------------
 
-define('TXT_TACHE', 'Tâche');
+define('TXT_TACHE', 'TÃ¢che');
 define('TXT_FIN', 'Fin');
 define('TXT_DESCRIPTION', 'Description');
 
@@ -35,12 +35,12 @@ define('TXT_DESCRIPTION', 'Description');
 //------------------------------------------------------
 
 define('TXT_NOM', 'Nom');
-define('TXT_NOMMEZ', 'Nommez votre tâche');
-define('TXT_DESCRIBE', 'Décrivez votre tâche (facultatif)');
+define('TXT_NOMMEZ', 'Nommez votre tÃ¢che');
+define('TXT_DESCRIBE', 'DÃ©crivez votre tÃ¢che (facultatif)');
 
 //------------------------------------------------------
 // tasklist.php 
 //------------------------------------------------------
 
-define('TXT_LISTETACHE','Liste des tâches');
+define('TXT_LISTETACHE','Liste des tÃ¢ches');
 ?>

@@ -34,7 +34,9 @@ include 'function_task.php';
 				list($code,$nom,$deadline,$content) = explode(';:!:;',$task,4);
 				$content = unescapetohtml($content);
 				if($var == $code)
-					if($code != 3) {
+				{
+					if($code != 3) 
+					{
 						echo "<div class=\"task\"><p class=\"desctask-admin\">"; echo TXT_TACHE; echo " : $nom </br>"; echo TXT_FIN; echo " : $deadline</p>
 						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"del\">
@@ -46,7 +48,9 @@ include 'function_task.php';
 						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>
 						<p class=\"content\">"; echo TXT_DESCRIPTION; echo " : $content</p></div>";
-					}else{
+					}
+					else
+					{
 						echo "<div class = \"task\"><p class=\"desctask-admin\">"; echo TXT_TACHE; echo " : $nom </br>"; echo TXT_FIN; echo " : $deadline</p>
 						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"del\">
@@ -56,6 +60,7 @@ include 'function_task.php';
 						<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
 						<p class=\"content\">"; echo TXT_DESCRIPTION; echo " : $content</p></div>";
 					}
+				}
 			}
 		}
 	}
