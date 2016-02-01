@@ -26,7 +26,7 @@ elseif($_POST['confpass']!=$_POST['password'])
 
 }
 
-elseif(!logcheck($_POST['password']) || !logcheck($_POST['pseudo']))
+elseif(!logcheck($_POST['password']))
 {
 	$_SESSION['error'] = 50;
 	header('location: registeration.php');	
