@@ -28,6 +28,7 @@ define('TXT_ERROR_50', 'Nombre de caractère insuffisant (min 4)');
 define('TXT_TACHE', 'Tâche');
 define('TXT_FIN', 'Fin');
 define('TXT_DESCRIPTION', 'Description');
+define('TXT_NEWTASK','Nouvelle tâche');
 
 
 //------------------------------------------------------
