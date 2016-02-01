@@ -40,6 +40,7 @@ define('TXT_NOMMEZ', 'Nommez votre tâche');
 define('TXT_DESCRIBE', 'Décrivez votre tâche (facultatif)');
 define('TXT_CANCEL','Annuler');
 define('TXT_ENREGISTRER', 'Enregistrer');
+define('TXT_DATE', 'jj/mm/aaaa');
 
 //------------------------------------------------------
 // tasklist.php 

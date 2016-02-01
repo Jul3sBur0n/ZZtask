@@ -39,6 +39,7 @@ define('TXT_NOMMEZ', 'Name your task');
 define('TXT_DESCRIBE', 'Describe your task (optional)');
 define('TXT_CANCEL', 'Cancel');
 define('TXT_ENREGISTRER', 'Save');
+define('TXT_DATE', 'dd/mm/yyyy');
 
 
 //------------------------------------------------------
