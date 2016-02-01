@@ -1,6 +1,7 @@
 <?php
 
 require_once("function_task.php");
+require_once("function_connexion.php");
 
 class TestTasks extends PHPUnit_Framework_TestCase{
 	
@@ -70,5 +71,22 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 
 		$this->assertEquals(0,$ligne);
 	}
+
+	public function testAddTask()
+	{
+		newuser("user1","password");
+		newuser("user2","password2");
+		
+		$fileCont = file_get_contents( "db_user.txt" );
+		$lines = explode( "\n", $fileCont );
+		$line = $lines[count($lines)-3];
+		$pass = hash("sha256","user1;:!:;password");
+		$this->assertEquals("0;:!:;user1;:!:;".$pass,$line);
+		$line = $lines[count($lines)-2];
+		$pass = hash("sha256","user2;:!:;password2");
+		$this->assertEquals("0;:!:;user2;:!:;".$pass,$line);
+	}
+
+
 }
 ?>
