@@ -9,9 +9,9 @@ else
 	include 'en-lang.php';
 ?>
 
-<link rel="stylesheet" href="back.css">
+
 <html>
-	<head> <title> <?php echo TXT_ENREGISTREMENT;?> </title> </head>
+	<head> <link rel="stylesheet" href="back.css"> <title> <?php echo TXT_ENREGISTREMENT;?> </title> </head>
 	<body>
 		<form class="langue" method="post" action="registeration.php">
 		<input type="hidden" value="<?php echo TXT_LANG; ?>" name="lang">

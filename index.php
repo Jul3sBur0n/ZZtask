@@ -11,7 +11,7 @@ if(isset($_SESSION['login']))
 	$login = $_SESSION['login'];
 	
 	
-if(!empty($_POST['lang']) && !empty($_SESSION['lang']))
+if(isset($_POST['lang']) && !empty($_SESSION['lang']))
 	$_SESSION['lang'] = $_POST['lang'];
 	
 	
@@ -21,10 +21,11 @@ else
 	include 'en-lang.php';
 ?>
 
-<link rel="stylesheet" href="back.css">
+
 
 <html>
 	<head>
+		<link rel="stylesheet" href="back.css">
 		<meta charset="utf_8"/>
 		<title>
 			<?php echo TXT_CONNEXION;?>

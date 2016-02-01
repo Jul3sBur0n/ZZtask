@@ -23,6 +23,7 @@ elseif(isset($_POST['del']))
 
 elseif(isset($_POST['edit']))
 {
+	$content = "";
 	$ligne = searchtask($_POST['edit']);
 	if(substr_count($ligne,';:!:;') == 2)
 		list($code,$nom,$deadline) = explode(';:!:;',$ligne);
