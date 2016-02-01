@@ -32,7 +32,7 @@ else
 		<input class="input-form" type="text" name="nom" id="nom" placeholder="<?php echo TXT_NOM; ?>" title="<?php TXT_NOMMEZ; ?>"/><br>
 		<input class="input-form" type="text" name="deadline" id="deadline" placeholder="Deadline" title="jj/mm/aaaa"/><br>
 		<textarea class="input-form input-area" type ="textarea" name="content" id="content" placeholder="<?php echo TXT_DESCRIBE; ?>"/></textarea><br>
-		<button class="btn" type="submit"><b><?php echo TXT_ENREGISTREMENT; ?></b></button> </form>
+		<button class="btn" type="submit"><b><?php echo TXT_ENREGISTRER; ?></b></button> </form>
 		<form class="block" method="post" action="tasklist.php"><button class="btn cancel" type="submit"><b><?php echo TXT_CANCEL; ?></b></button></form>
 		<?php
 			if(isset($_SESSION['error']))
