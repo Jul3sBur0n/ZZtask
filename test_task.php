@@ -1,6 +1,5 @@
 <?php
 
-require_once("function_task.php");
 require_once("function_connexion.php");
 
 class TestTasks extends PHPUnit_Framework_TestCase{

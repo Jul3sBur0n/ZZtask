@@ -1,5 +1,7 @@
 <?php
 
+include 'function_task.php';
+
 
 /*Identification function 	*/
 /*Input : 2 string 			*/
@@ -15,15 +17,6 @@ function verificationConnexion($pseudo,$password)
 		$pass = hash("sha256",$pseudo.";:!:;".$password);
 	}
 	return (strcmp($pass."\n",$secret) == 0);
-}
-
-
-/*Check if string is set and not empty 	*/
-/*Input : string 						*/
-/*Output : bool 						*/
-function checkParam($a)
-{
-	return (isset($a) && !empty($a));
 }
 
 
