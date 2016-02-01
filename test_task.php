@@ -55,7 +55,11 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 
 	public function testEdittask()
 	{
-		edittask()
+		edittask(1,"Test3.1","24/26/2017","newcontent","Test3");
+
+		$ligne = searchtask("Test3.1");
+
+		$this->assertEquals("1;:!:;Test3.1;:!:;24/26/2017;:!:;newcontent\n",$ligne);
 	}
 }
 ?>
