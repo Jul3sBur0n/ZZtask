@@ -28,4 +28,14 @@ define('TXT_TACHE', 'Task');
 define('TXT_FIN', 'End');
 define('TXT_DESCRIPTION', 'Description');
 
+
+//------------------------------------------------------
+// newtask.php 
+//------------------------------------------------------
+
+define('TXT_NOM', 'Name');
+define('TXT_NOMMEZ', 'Name your task');
+define('TXT_DESCRIPTION', 'Describe your task (optional)');
+
+
 ?>
