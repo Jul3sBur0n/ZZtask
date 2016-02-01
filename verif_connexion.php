@@ -14,7 +14,7 @@ include 'function_connexion.php';
 	</head>
 	<body>
 <?php
-if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']))
+if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password'])) // check if input is not empty
 {
 	$_SESSION['error'] = 10;
 	$_SESSION['connexion'] = 0;
@@ -24,7 +24,7 @@ if (!checkParam($_POST['pseudo']) || !checkParam($_POST['password']))
 }
 else
 {
-	if(verificationConnexion($_POST['pseudo'],$_POST['password']))
+	if(verificationConnexion($_POST['pseudo'],$_POST['password'])) // Check identification
 	{
 		$_SESSION['connexion'] = 1;
 		$_SESSION['admin'] = isAdmin($_POST['pseudo']);

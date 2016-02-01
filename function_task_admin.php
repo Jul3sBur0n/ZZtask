@@ -2,7 +2,9 @@
 
 include 'function_task.php';
 
-
+	
+	/* Display task and functionality 	*/
+	/* input: Int 						*/
 	function displaytask($var)
 	{
 		$arraytask = gettask();

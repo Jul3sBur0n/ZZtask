@@ -1,5 +1,9 @@
 <?php
 
+
+/*Identification function 	*/
+/*Input : 2 string 			*/
+/*Output : bool 			*/
 function verificationConnexion($pseudo,$password)
 {
 	$pass = 1;
@@ -13,11 +17,18 @@ function verificationConnexion($pseudo,$password)
 	return (strcmp($pass."\n",$secret) == 0);
 }
 
+
+/*Check if string is set and not empty 	*/
+/*Input : string 						*/
+/*Output : bool 						*/
 function checkParam($a)
 {
 	return (isset($a) && !empty($a));
 }
 
+
+/* add newuser in database 	*/
+/* Input: 2 String 			*/
 function newuser($login,$pass)
 {
 	$fichier = fopen('db_user.txt','a+');
@@ -26,6 +37,10 @@ function newuser($login,$pass)
 	fclose($fichier);
 }
 
+
+/* find all connection information with login 	*/
+/* Input : string 								*/
+/* Output : string 								*/
 function searchuser($login)
 {
 	$fichier = fopen('db_user.txt','r');
@@ -48,6 +63,10 @@ function searchuser($login)
 	return $ligne;
 }
 
+
+/* Check if user exist 	*/
+/* Input : string 		*/
+/* Output : bool 		*/
 function registerationcheck($login)
 {
 	if(searchuser($login))
@@ -57,6 +76,9 @@ function registerationcheck($login)
 	return $res;
 }
 
+/* Check user status 	*/
+/* Input : string 		*/
+/* Output : Bool 		*/
 function isAdmin($login)
 {
 	$ligne = searchuser($login);
@@ -64,6 +86,9 @@ function isAdmin($login)
 	return $code;
 }
 
+/* Check the length of user input 	*/
+/* Input : string 					*/
+/* Output : Bool 					*/
 function logcheck($a)
 {
 	return(strlen($a) >= 4);

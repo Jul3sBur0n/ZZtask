@@ -1,10 +1,17 @@
 <?php
 
+
+	/*Check if string is set and not empty 	*/
+	/*Input : string 						*/
+	/*Output : bool 						*/
 	function checkParam($a)
 	{
 		return (isset($a) && !empty($a));
 	}
 	
+	/* Write new task in database if task doesn't exist */
+	/* Input: 3 String 									*/
+	/* Outut: Bool 										*/
 	function newtask($nom,$deadline,$content)
 	{
 		$ligne = searchtask($nom);
@@ -23,6 +30,9 @@
 		return $ligne;
 	}
 	
+	/* find all information about task 	*/
+	/* Input: String 					*/
+	/* Output: String 					*/
 	function searchtask($nom)
 	{
 		$fichier = fopen('db_task.txt','r');
@@ -46,6 +56,8 @@
 		return $ligne;
 	}
 	
+	/* Put all task in arraylist 	*/
+	/* Output arraylist 			*/
 	function gettask()
 	{
 		$iterator = 0;
@@ -62,7 +74,8 @@
 		return $ligne;
 	}
 	
-	
+	/* Move a task at the next column or more 	*/
+	/* Input: String, Int 						*/
 	function uptask($nom,$up = 1)
 	{
 		$ligne = searchtask($nom);
@@ -89,6 +102,8 @@
 		}
 	}	
 
+	/* delete a task from database 	*/
+	/* Input: string 				*/
 	function deletetask($nom)
 	{
 		$ligne = searchtask($nom);
@@ -105,6 +120,8 @@
 		}
 	}
 	
+	/* Change information about task 	*/
+	/* Input: int, 4 String 			*/
 	function edittask($code,$nom,$deadline,$content,$oldname)
 	{
 		if(strcmp($nom,$oldname) != 0)
@@ -118,6 +135,9 @@
 		uptask($nom,$code-1);
 	}
 	
+	/* Manage newlines in content 	*/
+	/* Input: String 				*/
+	/* Output: String 				*/
 	function escapedesc($desc)
 	{
 		$desc = str_replace( '\\', '\\\\', $desc );
@@ -129,17 +149,26 @@
 		return $desc;
 	}
 	
+	/* Manage "//" before "n" 	*/
+	/* Input: String 			*/
+	/* Output: String 			*/
 	function _unescape_replacer( $matches )
 	{
 		return ( $matches[1] === 'n' ) ? "\n" : '\\';
 	}
 	
+	/* Manage "//" before "n" 	*/
+	/* Input: String 			*/
+	/* Output: String 			*/
 	function unescapedesc($desc)
 	{
 		$desc = preg_replace_callback( '#\\\\(.)#', '_unescape_replacer', $desc );
 		return $desc;
 	}
 	
+	/* Manage newline when content is reading 	*/
+	/* Input: String 			*/
+	/* Output: String 			*/
 	function unescapetohtml($desc)
 	{
 		$desc = unescapedesc($desc);
