@@ -1,6 +1,13 @@
 <?php
 
 include 'function_task_admin.php';
+include 'sessionstarter.php';
+if(isset($_POST['lang']))
+	$_SESSION['lang'] = $_POST['lang'];
+if($_SESSION['lang'] == "fr")
+	include 'fr-lang.php';
+else
+	include 'en-lang.php';
 
 if(isset($_POST['nom']))
 {

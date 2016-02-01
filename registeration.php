@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <?php
 include 'sessionstarter.php';
-
+if(isset($_POST['lang']))
+	$_SESSION['lang'] = $_POST['lang'];
+if($_SESSION['lang'] == "fr")
+	include 'fr-lang.php';
+else
+	include 'en-lang.php';
 ?>
 
 <link rel="stylesheet" href="back.css">

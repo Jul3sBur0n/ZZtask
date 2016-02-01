@@ -2,11 +2,13 @@
 <?php if($_SESSION['connexion'] == 0) header('location:index.php');
 
 include 'sessionstarter.php';
+if(isset($_POST['lang']))
+	$_SESSION['lang'] = $_POST['lang'];
+if($_SESSION['lang'] == "fr")
+	include 'fr-lang.php';
+else
+	include 'en-lang.php';
 
-function checkParam($a)
-{
-	return (isset($a) && !empty($a));
-}
 
 ?>
 
@@ -20,7 +22,7 @@ function checkParam($a)
 	
 	<body>
 		<form class="langue" method="post" action="newtask.php">
-		<input type="hidden" value="Fr" name="lang">
+		<input type="hidden" value="fr" name="lang">
 		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>		
 		<form class="deco" method="post" action="index.php">
 		<input type="hidden" value="1" name="deco">
