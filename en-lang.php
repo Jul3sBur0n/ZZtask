@@ -2,7 +2,7 @@
 
 define('TXT_LANG', 'FR');
 
-define('TXT_DECO', 'Disconnect');
+define('TXT_DECO', 'Sign Out');
 
 //------------------------------------------------------
 // index.php & registration.php
