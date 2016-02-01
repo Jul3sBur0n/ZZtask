@@ -53,9 +53,13 @@ elseif(isset($_POST['edit']))
 			<option value=\"2\""; if($code ==2) {echo "selected";} echo ">In progress</option>
 			<option value=\"3\""; if($code ==3) {echo "selected";} echo ">Done</option>
 		<input type=\"hidden\" value=$nom name=\"oldname\">
+<<<<<<< HEAD
 		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\""; echo TXT_DECO; echo "\" /><br>
+=======
+		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\""; echo TXT_NOMMEZ; "\" /><br>
+>>>>>>> 0dece384cb4f620b38ee40217babed181a1420ca
 		<input class=\"input-form\" type=\"text\" name=\"deadline\" id=\"deadline\" value=\"$deadline\" title=\"jj/mm/aaaa\"/><br>
-		<textarea class=\"input-form input-area\" type =\"textarea\" name=\"content\" id=\"content\" placeholder=\"Descriptif/Message\"/>$content</textarea><br/>
+		<textarea class=\"input-form input-area\" type =\"textarea\" name=\"content\" id=\"content\" placeholder=\""; echo TXT_DESCRIBE; "\"/>$content</textarea><br/>
 		<button class=\"btn\" type=\"submit\">Enregistrer<br></button> <button class=\"btn\" href=\"tasklist.php\">Annuler<br></button>
 		</form>
 		</div>
