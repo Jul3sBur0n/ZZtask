@@ -23,12 +23,12 @@ function checkParam($a)
 		<input type="hidden" value="1" name="deco">
 		<button class="btn btndeco" type="submit"><b>Déconnexion</b></button> </form>
 		<div class = "connexion">
-		<form name ="NewTask" method="post" action="verification_task.php">
+		<form class="block" name ="NewTask" method="post" action="verification_task.php">
 		<input class="input-form" type="text" name="nom" id="nom" placeholder="Nom" title="Nommez votre tache"/><br>
 		<input class="input-form" type="text" name="deadline" id="deadline" placeholder="Deadline" title="jj/mm/aaaa"/><br>
 		<textarea class="input-form input-area" type ="textarea" name="content" id="content" placeholder="Descriptif/Message"/></textarea><br>
-		<button class="btn" type="submit">Enregistrer<br></button> <button class="btn" href="tasklist.php">Annuler<br></button>
-		</form>
+		<button class="btn" type="submit"><b>Enregistrer</b></button> </form>
+		<form class="block" method="post" action="tasklist.php"><button class="btn cancel" type="submit"><b>Annuler</b></button></form>
 		<?php
 			if(isset($_SESSION['error']))
 			{

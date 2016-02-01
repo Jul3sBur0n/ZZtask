@@ -121,6 +121,7 @@ a:hover{
 
 .deco
 {
+	display:inlin-block;
 	position:absolute;
 	width:100%;
 }
@@ -129,4 +130,16 @@ a:hover{
 {
 	left:100%;
 	margin-left:-136px;
+}
+
+.block
+{
+	display: inline-block;
+}
+
+.cancel
+{
+	position: relative;
+	left:-85px;
+	
 }
