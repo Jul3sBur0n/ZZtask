@@ -121,9 +121,9 @@ a:hover{
 
 .deco
 {
-	display:inlin-block;
+	display:inline-block;
 	position:absolute;
-	width:100%;
+	width:50%;
 }
 
 .btndeco
@@ -142,4 +142,15 @@ a:hover{
 	position: relative;
 	left:-85px;
 	
+}
+
+.btnl
+{
+	left:0px;
+}
+
+.langue
+{
+	display:inline-block;
+	width:50%;
 }

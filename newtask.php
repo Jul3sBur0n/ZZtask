@@ -19,6 +19,9 @@ function checkParam($a)
 	</head>
 	
 	<body>
+		<form class="langue" method="get" action="newtask.php">
+		<input type="hidden" value="Fr" name="lang">
+		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>		
 		<form class="deco" method="post" action="index.php">
 		<input type="hidden" value="1" name="deco">
 		<button class="btn btndeco" type="submit"><b>Déconnexion</b></button> </form>
