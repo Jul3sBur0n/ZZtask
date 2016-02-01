@@ -36,7 +36,7 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 
 		$this->assertEquals("1;:!:;Test;:!:;23-01-2016;:!:;This is a test\n",$ligne[0]);
 		$this->assertEquals("1;:!:;test2;:!:;23/25/2016\n",$ligne[1]);
-		$this->assertEquals("1;:!:;Test3;:!:;23/25/2016\n",$ligne[3]);
+		$this->assertEquals("1;:!:;Test3;:!:;23/25/2016\n",$ligne[2]);
 	}
 
 }
