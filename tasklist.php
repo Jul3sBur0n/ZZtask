@@ -7,9 +7,9 @@ if($_SESSION['admin'])
 	include 'function_task_admin.php';
 else
 	include 'function_task_user.php';
-if(isset($_POST['lang']))
+if(isset($_POST['lang']) && isset($_SESSION['lang']))
 	$_SESSION['lang'] = $_POST['lang'];
-if($_SESSION['lang'] == "fr")
+if(isset($_SESSION['lang']) && $_SESSION['lang'] == "fr")
 	include 'fr-lang.php';
 else
 	include 'en-lang.php';

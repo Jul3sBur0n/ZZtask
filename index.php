@@ -3,11 +3,11 @@
 if(isset($_POST['deco']))
 	session_destroy();
 include 'sessionstarter.php';
-if(isset($_SESSION['login']))
+if(isset($_SESSION['login']) && isset($_SESSION['lang']))
 	$login = $_SESSION['login'];
 if(isset($_POST['lang']))
 	$_SESSION['lang'] = $_POST['lang'];
-if($_SESSION['lang'] == "fr")
+if(isset($_SESSION['lang']) && $_SESSION['lang'] == "fr")
 	include 'fr-lang.php';
 else
 	include 'en-lang.php';
@@ -29,7 +29,7 @@ else
 		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>
 		<div class="connexion">
 		<form class="premier" name ="Connexion" method="post" action="verif_connexion.php">
-		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login" title="4 à 15 caractères" <?php if(isset($_SESSION['login'])) {echo "value = $login";} ?> /><br>
+		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login" title="4 à 15 caractères" <?php if(isset($_SESSION['login']) && !empty($_SESSION['login'])) {echo "value = $login";} ?> /><br>
 		<input class="input-form" type="password" name="password" id="password" placeholder="Password" title="4 à 20 caractères"/> <br><br>
 		<button class="btn" type="submit">Connexion<br/></button> <a class = "reg" href="registeration.php" > Pas encore inscrit ? </a>
 		</form>
