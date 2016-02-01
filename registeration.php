@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include 'sessionstarter.php';
-if(isset($_POST['lang']) && isset($_SESSION['lang']))
+if(isset($_POST['lang']) && !empty($_SESSION['lang']))
 	$_SESSION['lang'] = $_POST['lang'];
 if(isset($_SESSION['lang']) && $_SESSION['lang'] == "FR")
 	include 'fr-lang.php';

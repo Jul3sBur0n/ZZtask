@@ -1,6 +1,6 @@
 <?php
 
-define('TXT_LANG', 'FR');
+define('TXT_LANG', 'EN');
 
 //------------------------------------------------------
 // index.php & registration.php

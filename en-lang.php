@@ -14,7 +14,7 @@ define('TXT_ENREGISTREMENT', 'Sign Up');
 //------------------------------------------------------
 
 define('TXT_ERROR_10', 'Error empty field');
-define('TXT_ERROR_20', 'Error during identification');
+define('TXT_ERROR_20', 'identification Error');
 define('TXT_ERROR_30', 'Login already used');
 define('TXT_ERROR_40', 'Characters not allowed (! ; :)');
 define('TXT_ERROR_50', 'Insufficient number of characters (min 4)');
