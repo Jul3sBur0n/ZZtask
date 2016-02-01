@@ -38,6 +38,7 @@ define('TXT_DESCRIPTION', 'Description');
 define('TXT_NOM', 'Name');
 define('TXT_NOMMEZ', 'Name your task');
 define('TXT_DESCRIBE', 'Describe your task (optional)');
+define('TXT_CANCEL', 'Cancel');
 
 
 ?>
