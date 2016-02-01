@@ -2,7 +2,7 @@
 <?php if($_SESSION['connexion'] == 0) header('location:index.php');
 
 include 'sessionstarter.php';
-if(isset($_POST['lang']) && !empty($_SESSION['lang']))
+if(isset($_POST['lang']))
 	$_SESSION['lang'] = $_POST['lang'];
 if(isset($_SESSION['lang']) && $_SESSION['lang'] == "FR")
 	include 'fr-lang.php';

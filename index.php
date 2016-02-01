@@ -11,11 +11,11 @@ if(isset($_SESSION['login']))
 	$login = $_SESSION['login'];
 	
 	
-if(isset($_POST['lang']) && !empty($_SESSION['lang']))
+if(isset($_POST['lang']))
 	$_SESSION['lang'] = $_POST['lang'];
 	
 	
-if(isset($_SESSION['lang']) && $_SESSION['lang'] == "FR")
+if(!empty($_SESSION['lang']) && $_SESSION['lang'] == "FR")
 	include 'fr-lang.php';
 else
 	include 'en-lang.php';
