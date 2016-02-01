@@ -41,4 +41,11 @@ define('TXT_DESCRIBE', 'Describe your task (optional)');
 define('TXT_CANCEL', 'Cancel');
 
 
+//------------------------------------------------------
+// tasklist.php 
+//------------------------------------------------------
+
+define('TXT_LISTETACHE', 'Tasks list');
+
+
 ?>
