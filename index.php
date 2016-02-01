@@ -11,7 +11,7 @@ if(isset($_SESSION['login']))
 	$login = $_SESSION['login'];
 	
 	
-if(isset($_POST['lang']) && !empty($_SESSION['lang']))
+if(!empty($_POST['lang']) && !empty($_SESSION['lang']))
 	$_SESSION['lang'] = $_POST['lang'];
 	
 	
