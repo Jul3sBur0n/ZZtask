@@ -2,7 +2,7 @@
 
 define('TXT_LANG', 'FR');
 
-define('TXT_DECO', 'Disconnect');
+define('TXT_DECO', 'Sign Out');
 
 //------------------------------------------------------
 // index.php & registration.php
@@ -39,6 +39,8 @@ define('TXT_NOM', 'Name');
 define('TXT_NOMMEZ', 'Name your task');
 define('TXT_DESCRIBE', 'Describe your task (optional)');
 define('TXT_CANCEL', 'Cancel');
+define('TXT_ENREGISTRER', 'Save');
+define('TXT_DATE', 'dd/mm/yyyy');
 
 
 //------------------------------------------------------
