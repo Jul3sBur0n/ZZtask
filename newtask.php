@@ -19,7 +19,7 @@ function checkParam($a)
 	</head>
 	
 	<body>
-		<form class="langue" method="get" action="newtask.php">
+		<form class="langue" method="post" action="newtask.php">
 		<input type="hidden" value="Fr" name="lang">
 		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>		
 		<form class="deco" method="post" action="index.php">

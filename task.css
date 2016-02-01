@@ -184,8 +184,9 @@ a{
 
 .deco
 {
-	position: static;
-	width:100%;
+	position: absolute;
+	width:50%;
+	display:inline-block;
 }
 
 .btndeco
@@ -193,4 +194,15 @@ a{
 	position:relative;
 	left:100%;
 	margin-left:-136px;
+}
+
+.btnl
+{
+	left:0px;
+}
+
+.langue
+{
+	display:inline-block;
+	width:50%;
 }

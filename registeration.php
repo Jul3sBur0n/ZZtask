@@ -8,6 +8,9 @@ include 'sessionstarter.php';
 <html>
 	<head> <title> Enregistrement </title> </head>
 	<body>
+		<form class="langue" method="post" action="registeration.php">
+		<input type="hidden" value="Fr" name="lang">
+		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>
 		<div class="connexion">
 		<form name ="Connexion" method="post" action="verification.php">
 		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login"/><br>

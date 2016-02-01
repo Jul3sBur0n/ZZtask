@@ -18,6 +18,9 @@ if(isset($_SESSION['login']))
 	
 	</head>
 	<body>
+		<form class="langue" method="post" action="index.php">
+		<input type="hidden" value="Fr" name="lang">
+		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>
 		<div class="connexion">
 		<form class="premier" name ="Connexion" method="post" action="verif_connexion.php">
 		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login" title="4 à 15 caractères" <?php if(isset($_SESSION['login'])) {echo "value = $login";} ?> /><br>

@@ -32,6 +32,10 @@ elseif(isset($_POST['edit']))
 	</header>
 	
 	<body>
+		<form class=\"langue\" method=\"post\" action=\"gestion_task.php\">
+		<input type=\"hidden\" value=\"Fr\" name=\"lang\">
+		<input type=\"hidden\" value=\"$nom\" name=\"edit\">
+		<button class=\"btn btnl\" type=\"submit\"><b>Fr</b></button> </form>
 		<form class=\"deco\" method=\"post\" action=\"index.php\">
 		<input type=\"hidden\" value=\"1\" name=\"deco\">
 		<button class=\"btn btndeco\" type=\"submit\"><b>Déconnexion</b></button> </form>
