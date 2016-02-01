@@ -82,7 +82,7 @@
 		if($ligne != 0 && $up != 0)
 		{
 			$arraytask = gettask();
-			$fichier = fopen('db_task.txt',w);
+			$fichier = fopen('db_task.txt',"w");
 			if($fichier)
 			{
 				foreach($arraytask as $task)
