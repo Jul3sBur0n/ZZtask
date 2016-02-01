@@ -59,10 +59,6 @@ else
 						echo '<span class = "erreur">Nombre de caractère insuffisant (min 4)</span>';
 						$_SESSION['error'] = 0;
 						break;
-					case 51:
-						echo '<span class = "erreur">Nombre de caractère insuffisant (min 5)</span>';
-						$_SESSION['error'] = 0;
-						break;
 						
 					default:
 						break;

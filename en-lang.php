@@ -18,7 +18,6 @@ define('TXT_ERROR_20', 'identification Error');
 define('TXT_ERROR_30', 'Login already used');
 define('TXT_ERROR_40', 'Characters not allowed (! ; :)');
 define('TXT_ERROR_50', 'Insufficient number of characters (min 4)');
-define('TXT_ERROR_51', 'Insufficient number of characters (min 5)');
 
 //------------------------------------------------------
 // function_task_user.php
