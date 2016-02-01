@@ -3,16 +3,17 @@
 
 include 'sessionstarter.php';
 if($_SESSION['connexion'] == 0) header('location:index.php');
+
+if(isset($_POST['lang']) && isset($_SESSION['lang']))
+	$_SESSION['lang'] = $_POST['lang'];
+if(isset($_SESSION['lang']) && $_SESSION['lang'] == "FR")
+	include 'fr-lang.php';
+else
+	include 'en-lang.php';
 if($_SESSION['admin'])
 	include 'function_task_admin.php';
 else
 	include 'function_task_user.php';
-if(isset($_POST['lang']) && isset($_SESSION['lang']))
-	$_SESSION['lang'] = $_POST['lang'];
-if(isset($_SESSION['lang']) && $_SESSION['lang'] == "fr")
-	include 'fr-lang.php';
-else
-	include 'en-lang.php';
 ?>
 <html>
 	<head>
