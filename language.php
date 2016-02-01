@@ -22,14 +22,14 @@ else {														// french by default
  
 switch ($lang) {											 
   case 'en':
-  $lang_file = "./languages/".$file.'_en.php';
+  $lang_file = $file.'en-lang.php';
   $TXT_CURRENT_LANGUAGE = "English";
   $TXT_LANGUAGE1_LIEN = "fr";
   break;
 
   case 'fr':
   default:
-  $lang_file = "./languages/".$file.'_fr.php';
+  $lang_file = $file.'fr-lang.php';
   $TXT_CURRENT_LANGUAGE = "Français";
   $TXT_LANGUAGE1 = "English";
   $TXT_LANGUAGE1_LIEN = "en";

@@ -14,7 +14,7 @@ include 'function_task.php';
 				list($code,$nom,$deadline) = explode(';:!:;',$task);
 				if($var == $code)
 				{
-					echo "<div class = \"task\"><p class=\"desctask-user\">Tâche : $nom </br>Fin : $deadline</p>";
+					echo "<div class = \"task\"><p class=\"desctask-user\">"; echo TXT_TACHE; echo " : $nom </br>"; echo TXT_FIN; echo " : $deadline</p>";
 					if($code != 3)
 						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
@@ -30,12 +30,12 @@ include 'function_task.php';
 				$content = unescapetohtml($content);
 				if($var == $code)
 				{
-					echo "<div class = \"task\"><p class=\"desctask-user\">Tâche : $nom </br>Fin : $deadline</p>";
+					echo "<div class = \"task\"><p class=\"desctask-user\">"; echo TXT_TACHE; echo " : $nom </br>"; echo TXT_FIN; echo " : $deadline</p>";
 					if($code != 3)
 						echo "<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>";
-					echo "<p class=\"content\">Description : $content</p></div>";
+					echo "<p class=\"content\">"; echo TXT_DESCRIPTION; echo " : $content</p></div>";
 				}
 
 			}

@@ -15,7 +15,7 @@ include 'function_task.php';
 				list($code,$nom,$deadline) = explode(';:!:;',$task);
 				if($var == $code)
 				{
-					echo "<div class = \"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
+					echo "<div class = \"task\"><p class=\"desctask-admin\">"; echo TXT_TACHE; echo " : $nom </br>"; echo TXT_FIN; echo " : $deadline</p>
 					<form class=\"suptask\" method=\"post\" action=\"gestion_task.php\">
 					<input type=\"hidden\" value=\"$nom\" name=\"del\">
 					<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
@@ -34,8 +34,8 @@ include 'function_task.php';
 				list($code,$nom,$deadline,$content) = explode(';:!:;',$task,4);
 				$content = unescapetohtml($content);
 				if($var == $code)
-					if($code != 3)
-						echo "<div class=\"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
+					if($code != 3) {
+						echo "<div class=\"task\"><p class=\"desctask-admin\">"; echo TXT_TACHE; echo " : $nom </br>"; echo TXT_FIN; echo " : $deadline</p>
 						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"del\">
 						<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
@@ -45,16 +45,17 @@ include 'function_task.php';
 						<form class=\"uptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"nom\">
 						<button class=\"btn btnup\" type=\"submit\"><b>></b></button> </form>
-						<p class=\"content\">Description : $content</p></div>";
-					else
-						echo "<div class = \"task\"><p class=\"desctask-admin\">Tâche : $nom </br>Fin : $deadline</p>
+						<p class=\"content\">"; echo TXT_DESCRIPTION; echo " : $content</p></div>";
+					}else{
+						echo "<div class = \"task\"><p class=\"desctask-admin\">"; echo TXT_TACHE; echo " : $nom </br>"; echo TXT_FIN; echo " : $deadline</p>
 						<form class=\"suptask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"del\">
 						<button class=\"btn btnup\" type=\"submit\"><b>x</b></button> </form>
 						<form class=\"edittask\" method = \"post\" action = \"gestion_task.php\">
 						<input type=\"hidden\" value=\"$nom\" name=\"edit\">
 						<button class=\"btn btnup\" type=\"submit\"><b>Edit</b></button> </form>
-						<p class=\"content\">Description : $content</p></div>";
+						<p class=\"content\">"; echo TXT_DESCRIPTION; echo " : $content</p></div>";
+					}
 			}
 		}
 	}
