@@ -40,12 +40,12 @@ elseif(isset($_POST['edit']))
 	
 	<body>
 		<form class=\"langue\" method=\"post\" action=\"gestion_task.php\">
-		<input type=\"hidden\" value=\"Fr\" name=\"lang\">
+		<input type=\"hidden\" value=\""; echo TXT_LANG; "\" name=\"lang\">
 		<input type=\"hidden\" value=\"$nom\" name=\"edit\">
-		<button class=\"btn btnl\" type=\"submit\"><b>Fr</b></button> </form>
+		<button class=\"btn btnl\" type=\"submit\"><b>"; echo TXT_LANG; "</b></button> </form>
 		<form class=\"deco\" method=\"post\" action=\"index.php\">
 		<input type=\"hidden\" value=\"1\" name=\"deco\">
-		<button class=\"btn btndeco\" type=\"submit\"><b>Déconnexion</b></button> </form>
+		<button class=\"btn btndeco\" type=\"submit\"><b>"; echo TXT_DECO; "</b></button> </form>
 		<div class = \"connexion\">
 		<form name =\"NewTask\" method=\"post\" action=\"gestion_task.php\">
 		<select class = \"input-form\" name=\"code\" id=\"code\">
@@ -53,7 +53,7 @@ elseif(isset($_POST['edit']))
 			<option value=\"2\""; if($code ==2) {echo "selected";} echo ">In progress</option>
 			<option value=\"3\""; if($code ==3) {echo "selected";} echo ">Done</option>
 		<input type=\"hidden\" value=$nom name=\"oldname\">
-		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\"Nom de votre tâche\" /><br>
+		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\""; echo TXT_DECO; "\" /><br>
 		<input class=\"input-form\" type=\"text\" name=\"deadline\" id=\"deadline\" value=\"$deadline\" title=\"jj/mm/aaaa\"/><br>
 		<textarea class=\"input-form input-area\" type =\"textarea\" name=\"content\" id=\"content\" placeholder=\"Descriptif/Message\"/>$content</textarea><br/>
 		<button class=\"btn\" type=\"submit\">Enregistrer<br></button> <button class=\"btn\" href=\"tasklist.php\">Annuler<br></button>
