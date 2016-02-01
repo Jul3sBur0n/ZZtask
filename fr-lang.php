@@ -36,5 +36,9 @@ define('TXT_NOM', 'Nom');
 define('TXT_NOMMEZ', 'Nommez votre tâche');
 define('TXT_DESCRIBE', 'Décrivez votre tâche (facultatif)');
 
+//------------------------------------------------------
+// tasklist.php 
+//------------------------------------------------------
 
+define('TXT_LISTETACHE','Liste des tâches');
 ?>

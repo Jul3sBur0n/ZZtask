@@ -36,5 +36,10 @@ define('TXT_NOM', 'Name');
 define('TXT_NOMMEZ', 'Name your task');
 define('TXT_DESCRIBE', 'Describe your task (optional)');
 
+//------------------------------------------------------
+// tasklist.php 
+//------------------------------------------------------
+
+define('TXT_LISTETACHE','Tasklist');
 
 ?>
