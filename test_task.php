@@ -72,7 +72,7 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 		$this->assertEquals(0,$ligne);
 	}
 
-	public function testAddTask()
+	public function testAddUser()
 	{
 		newuser("user1","password");
 		newuser("user2","password2");
