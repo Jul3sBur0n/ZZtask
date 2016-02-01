@@ -61,5 +61,14 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 
 		$this->assertEquals("1;:!:;Test3.1;:!:;24/26/2017;:!:;newcontent\n",$ligne);
 	}
+
+	public function testDeletetask()
+	{
+		deletetask("test2");
+
+		$ligne = searchtask("test2");
+
+		$this->assertEquals(0,$ligne);
+	}
 }
 ?>
