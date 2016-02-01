@@ -16,24 +16,24 @@ else
 <html>
 	<head>
 		<meta charset="utf_8">
-		<title>Ajouter une tache</title>
+		<title><?php echo TXT_NEWTASK; ?></title>
 		<link rel="stylesheet" href="back.css">
 	</head>
 	
 	<body>
 		<form class="langue" method="post" action="newtask.php">
-		<input type="hidden" value="fr" name="lang">
-		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>		
+		<input type="hidden" value="<?php echo TXT_LANG; ?>" name="lang">
+		<button class="btn btnl" type="submit"><b><?php echo TXT_LANG; ?></b></button> </form>		
 		<form class="deco" method="post" action="index.php">
 		<input type="hidden" value="1" name="deco">
-		<button class="btn btndeco" type="submit"><b>Déconnexion</b></button> </form>
+		<button class="btn btndeco" type="submit"><b><?php echo TXT_DECO; ?></b></button> </form>
 		<div class = "connexion">
 		<form class="block" name ="NewTask" method="post" action="verification_task.php">
-		<input class="input-form" type="text" name="nom" id="nom" placeholder="Nom" title="Nommez votre tache"/><br>
+		<input class="input-form" type="text" name="nom" id="nom" placeholder="<?php echo TXT_NOM; ?>" title="<?php TXT_NOMMEZ; ?>"/><br>
 		<input class="input-form" type="text" name="deadline" id="deadline" placeholder="Deadline" title="jj/mm/aaaa"/><br>
-		<textarea class="input-form input-area" type ="textarea" name="content" id="content" placeholder="Descriptif/Message"/></textarea><br>
-		<button class="btn" type="submit"><b>Enregistrer</b></button> </form>
-		<form class="block" method="post" action="tasklist.php"><button class="btn cancel" type="submit"><b>Annuler</b></button></form>
+		<textarea class="input-form input-area" type ="textarea" name="content" id="content" placeholder="<?php echo TXT_DESCRIBE; ?>"/></textarea><br>
+		<button class="btn" type="submit"><b><?php echo TXT_ENREGISTREMENT; ?></b></button> </form>
+		<form class="block" method="post" action="tasklist.php"><button class="btn cancel" type="submit"><b><?php echo TXT_CANCEL; ?></b></button></form>
 		<?php
 			if(isset($_SESSION['error']))
 			{
