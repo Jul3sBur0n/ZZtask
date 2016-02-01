@@ -28,7 +28,7 @@ else
 	<body>
 		<form class="langue" method="post" action="tasklist.php">
 		<input type="hidden" value="<?php echo TXT_LANG; ?>" name="lang">
-		<button class="btn btnl" type="submit"><b>Fr</b></button> </form>
+		<button class="btn btnl" type="submit"><b><?php echo TXT_LANG; ?></b></button> </form>
 		<form class="deco" method="post" action="index.php">
 		<input type="hidden" value="1" name="deco">
 		<button class="btn btndeco" type="submit"><b><?php echo TXT_DECO; ?></b></button> </form>
