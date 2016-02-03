@@ -113,6 +113,7 @@ a:hover{
 
 .erreur
 {
+	display: block;
 	color: red;
 	position: relative;
 	left: 100px;
