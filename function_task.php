@@ -124,12 +124,6 @@
 	/* Input: int, 4 String 			*/
 	function edittask($code,$nom,$deadline,$content,$oldname)
 	{
-		if(strcmp($nom,$oldname) != 0)
-		{
-			$ligne = searchtask($nom);
-			if($ligne != 0)
-				$nom = $oldname;
-		}
 		deletetask($oldname);
 		newtask($nom,$deadline,$content);
 		uptask($nom,$code-1);
