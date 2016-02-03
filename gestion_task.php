@@ -66,7 +66,7 @@ elseif(isset($_POST['edit']))
 
 elseif(isset($_POST['oldname'],$_POST['code'],$_POST['name'],$_POST['deadline']))
 {
-	if(0 == searchtask($_POST['name']) || strcmp($_POST['name'],$_POST['oldname']) == 0)
+	/*if(0 == searchtask($_POST['name']) || $_POST['name'] == $_POST['oldname'])*/
 		edittask($_POST['code'],$_POST['name'],$_POST['deadline'],$_POST['content'],$_POST['oldname']);
 	header('Location:tasklist.php');
 }
