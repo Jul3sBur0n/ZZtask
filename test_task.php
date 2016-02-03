@@ -48,7 +48,7 @@ class TestTasks extends PHPUnit_Framework_TestCase{
 		$this->assertEquals("2;:!:;Test;:!:;23-01-2016;:!:;This is a test\n",$lignes);
 		
 		uptask("tache et plus");
-		$lignes = search("tache et plus");
+		$lignes = searchtask("tache et plus");
 		
 		$this->assertEquals("2;:!:;tache et plus;:!:;23/25/2016\n",$lignes);
 
