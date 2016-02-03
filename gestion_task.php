@@ -53,7 +53,7 @@ elseif(isset($_POST['edit']))
 			<option value=\"1\""; if($code ==1) {echo "selected";} echo ">To do</option>
 			<option value=\"2\""; if($code ==2) {echo "selected";} echo ">In progress</option>
 			<option value=\"3\""; if($code ==3) {echo "selected";} echo ">Done</option>
-		<input type=\"hidden\" value=$nom name=\"oldname\">
+		<input type=\"hidden\" value=\"$nom\" name=\"oldname\">
 		<input class=\"input-form\" type=\"text\" name=\"name\" id=\"nom\" value = \"$nom\" title=\""; echo TXT_NOMMEZ; echo "\" /><br>
 		<input class=\"input-form\" type=\"text\" name=\"deadline\" id=\"deadline\" value=\"$deadline\" title=\""; echo TXT_DATE; echo "\"/><br>
 		<textarea class=\"input-form input-area\" type =\"textarea\" name=\"content\" id=\"content\" placeholder=\""; echo TXT_DESCRIBE; echo "\"/>$content</textarea><br/>
