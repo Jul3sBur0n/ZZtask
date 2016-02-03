@@ -21,6 +21,8 @@ else
 	</head>
 	
 	<body>
+		
+		
 		<form class="langue" method="post" action="newtask.php">
 		<input type="hidden" value="<?php echo TXT_LANG; ?>" name="lang">
 		<button class="btn btnl" type="submit"><b><?php echo TXT_LANG; ?></b></button> </form>		
@@ -28,6 +30,11 @@ else
 		<input type="hidden" value="1" name="deco">
 		<button class="btn btndeco" type="submit"><b><?php echo TXT_DECO; ?></b></button> </form>
 		<div class = "connexion">
+			
+		<!--------------New task formular-------------------->
+		<!-----Input name; deadline; message; --------------->
+		<!---- Redirection to verification_task.php---------->
+		
 		<form class="block" name ="NewTask" method="post" action="verification_task.php">
 		<input class="input-form" type="text" name="nom" id="nom" placeholder="<?php echo TXT_NOM; ?>" title="<?php TXT_NOMMEZ; ?>"/><br>
 		<input class="input-form" type="text" name="deadline" id="deadline" placeholder="Deadline" title="jj/mm/aaaa"/><br>
@@ -40,23 +47,23 @@ else
 				switch($_SESSION['error'])
 				{
 					case 10:
-						echo '<span class = "erreur">Erreur champ vide.</span>';
+						echo '<span class = "erreur">'; echo TXT_ERROR_10; echo '.</span>';
 						$_SESSION['error']=0;
 						break;
 					case 20:
-						echo '<span class = "erreur">Erreur d\'identification.</span>';
+						echo '<span class = "erreur">'; echo TXT_ERROR_20; echo '.</span>';
 						$_SESSION['error'] = 0;
 						break;
 					case 30:
-						echo '<span class = "erreur">Nom d\'utilisateur déjà utilisé</span>';
+						echo '<span class = "erreur">'; echo TXT_ERROR_30; echo '</span>';
 						$_SESSION['error'] = 0;
 						break;
 					case 40:
-						echo '<span class = "erreur">Caractère non admis (! ; :)</span>';
+						echo '<span class = "erreur">'; echo TXT_ERROR_40; echo '</span>';
 						$_SESSION['error'] = 0;
 						break;
 					case 50:
-						echo '<span class = "erreur">Nombre de caractère insuffisant (min 4)</span>';
+						echo '<span class = "erreur">'; echo TXT_ERROR_50; echo '</span>';
 						$_SESSION['error'] = 0;
 						break;
 						

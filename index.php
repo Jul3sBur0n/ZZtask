@@ -36,6 +36,11 @@ else
 		<form class="langue" method="post" action="index.php">
 		<input type="hidden" value="<?php echo TXT_LANG; ?>" name="lang">
 		<button class="btn btnl" type="submit"><b><?php echo TXT_LANG; ?></b></button> </form>
+		
+		<!--------------Sign In formular--------------------->
+		<!-----Input name; password; ------------------------>
+		<!---- Redirection to verification_task.php---------->
+		
 		<div class="connexion">
 		<form class="premier" name ="Connexion" method="post" action="verif_connexion.php">
 		<input class="input-form" type="text" name="pseudo" id="pseudo" placeholder="Login" title="4 à 15 caractères" <?php if(isset($_SESSION['login'])) {echo "value = $login";} ?> ><br>
