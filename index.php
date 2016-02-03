@@ -39,7 +39,7 @@ else
 		
 		<!--------------Sign In formular--------------------->
 		<!-----Input name; password; ------------------------>
-		<!---- Redirection to verification_task.php---------->
+		<!---- Redirection to verif_connexion.php---------->
 		
 		<div class="connexion">
 		<form class="premier" name ="Connexion" method="post" action="verif_connexion.php">
